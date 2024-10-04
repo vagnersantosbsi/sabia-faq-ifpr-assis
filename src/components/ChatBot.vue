@@ -33,11 +33,13 @@ import { ref, onMounted, nextTick, computed } from 'vue'; // Importe 'computed' 
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
+
 //import axios from 'axios';
 
 
 export default {
     setup() {
+
         const userInput = ref('');
         const chatBox = ref(null);
         const messageElements = ref([]); // Referências para cada elemento de mensagem
@@ -56,8 +58,8 @@ export default {
 
         ]);
         //const messages = ref([]); // Inicie o array vazio
-
-        const API_KEY = 'AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew';
+        //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
+        const API_KEY = process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Substitua pelo modelo desejado
 
