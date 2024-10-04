@@ -11264,7 +11264,7 @@ Assinatura
                 if (history.length === 0) {
                     history.push({
                         role: 'user',
-                        parts: [{ text: "Gemini, você é um Especialista em orientações sobre o Processo seletivo do IFPR para Ingresso em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas, além de muito bem formatadas." }],
+                        parts: [{ text: "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas." }],
                     });
                     history.push({
                         role: 'user',
