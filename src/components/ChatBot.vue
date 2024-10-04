@@ -59,7 +59,7 @@ export default {
         ]);
         //const messages = ref([]); // Inicie o array vazio
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
-        const API_KEY = process.env.API_KEY;
+        const API_KEY = "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Substitua pelo modelo desejado
 
