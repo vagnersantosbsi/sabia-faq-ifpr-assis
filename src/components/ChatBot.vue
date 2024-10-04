@@ -4,13 +4,16 @@
         <div class="chat-box">
             <div v-for="message in mensagensVisiveis" :key="message.id" :class="{
                 'user-message': message.sender === 'user',
-                'ai-message': message.sender === 'assistent',
+                'ai-message': message.sender === 'model',
                 message: true,
                 clearfix: true,
-            }">
+            }" ref="messageElements">
                 <div v-html="message.text"></div>
 
                 <!-- {{ message.text }} -->
+            </div>
+            <div v-if="loading" class="loading-indicator">
+                Aguarde... ⏳
             </div>
         </div>
         <div class="input-area">
@@ -25,7 +28,6 @@
 //import { ref, onMounted, nextTick } from 'vue';
 import { ref, onMounted, nextTick, computed } from 'vue'; // Importe 'computed' aqui
 
-
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 //import axios from 'axios';
@@ -35,6 +37,8 @@ export default {
     setup() {
         const userInput = ref('');
         const chatBox = ref(null);
+        const messageElements = ref([]); // Referências para cada elemento de mensagem
+        const loading = ref(false); // Variável para controlar o loading
 
         const history = [
             // ... outros prompts internos
@@ -11250,6 +11254,8 @@ Assinatura
 
  `;
 
+            
+
 
             try {
                 // Adiciona os editais ao histórico da IA, mas não à exibição do usuário
@@ -11285,6 +11291,8 @@ Assinatura
                     generationConfig,
                     history,
                 });
+
+                loading.value = true; // Ativa o loading
 
                 const result = await chatSession.sendMessage(userInput.value);
                 const response = await result.response;
@@ -11322,6 +11330,12 @@ Assinatura
                 if (chatBox.value) {
                     chatBox.value.scrollTop = chatBox.value.scrollHeight;
                 }
+                const lastMessageElement = messageElements.value[messageElements.value.length - 1];
+                if (lastMessageElement) {
+                    lastMessageElement.scrollIntoView({ behavior: 'smooth' }); // Rolagem suave
+                }
+
+                loading.value = false; // Desativa o loading
 
 
             } catch (error) {
@@ -11331,6 +11345,9 @@ Assinatura
                     sender: 'model',
                     text: 'Desculpe, ocorreu um erro. Tente novamente mais tarde.',
                 });
+
+                loading.value = false; // Desativa o loading
+
             }
 
         };
@@ -11359,6 +11376,9 @@ Assinatura
             sendMessage,
             chatBox,
             mensagensVisiveis, // Retorna as mensagens filtradas
+            messageElements, // Adiciona messageElements ao retorno
+            loading, // Adiciona loading ao retorno
+
         };
     },
 };
@@ -11367,6 +11387,14 @@ Assinatura
 <style scoped>
 /* Estilos do componente (os mesmos do código original, adaptados para scoped) */
 
+.loading-indicator {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 100px;
+    font-style: italic;
+    color: #663399;
+    background-color: cornflowerblue;
+}
 
 .chat-container {
     padding: 20px;
@@ -11384,7 +11412,8 @@ Assinatura
 }
 
 .background-image {
-    position: absolute; /* Posicione a imagem atrás do conteúdo */
+    position: absolute;
+    /* Posicione a imagem atrás do conteúdo */
     top: 0;
     left: 0;
     width: 100%;
@@ -11392,7 +11421,8 @@ Assinatura
     background-image: url('../assets/banner-geral-1536x864.png');
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Certifique-se de que a imagem fique atrás do conteúdo */
+    z-index: -1;
+    /* Certifique-se de que a imagem fique atrás do conteúdo */
 }
 
 .chat-box {
