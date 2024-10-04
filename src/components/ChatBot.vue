@@ -1,5 +1,10 @@
 <template>
     <div class="chat-container">
+        <div v-if="loading" class="loading-overlay">
+            <div class="loading-indicator">
+                Processando.. aguarde alguns segundos... ⏳
+            </div>
+        </div>
         <div class="background-image"></div>
         <div class="chat-box">
             <div v-for="message in mensagensVisiveis" :key="message.id" :class="{
@@ -12,9 +17,7 @@
 
                 <!-- {{ message.text }} -->
             </div>
-            <div v-if="loading" class="loading-indicator">
-                Aguarde... ⏳
-            </div>
+            
         </div>
         <div class="input-area">
             <textarea v-model="userInput" placeholder="Digite sua mensagem..." rows="3"></textarea>
@@ -11254,7 +11257,7 @@ Assinatura
 
  `;
 
-            
+
 
 
             try {
@@ -11387,10 +11390,23 @@ Assinatura
 <style scoped>
 /* Estilos do componente (os mesmos do código original, adaptados para scoped) */
 
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Certifique-se de que a sobreposição esteja acima de outros elementos */
+}
+
 .loading-indicator {
     text-align: center;
     margin-top: 10px;
-    font-size: 100px;
+    font-size: 50px;
     font-style: italic;
     color: #663399;
     background-color: cornflowerblue;
