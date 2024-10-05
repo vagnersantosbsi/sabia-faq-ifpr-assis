@@ -59,7 +59,7 @@ export default {
         ]);
         //const messages = ref([]); // Inicie o array vazio
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
-        const API_KEY = "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";
+        const API_KEY = "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Substitua pelo modelo desejado
 
@@ -67,7 +67,7 @@ export default {
             temperature: 1,
             topP: 0.95,
             topK: 64,
-            maxOutputTokens: 8192,
+            maxOutputTokens: 32768,
             responseMimeType: 'text/plain',
         };
 
@@ -11273,13 +11273,8 @@ Assinatura
                     });
                     history.push({
                         role: 'user',
-                        parts: [{ text: edital1 }],
+                        parts: [{ text: edital4 }],
                     });
-                    history.push({
-                        role: 'user',
-                        parts: [{ text: edital2 }],
-                    });
-
                     history.push({
                         role: 'user',
                         parts: [{ text: edital3 }],
@@ -11287,7 +11282,12 @@ Assinatura
 
                     history.push({
                         role: 'user',
-                        parts: [{ text: edital4 }],
+                        parts: [{ text: edital2 }],
+                    });
+
+                    history.push({
+                        role: 'user',
+                        parts: [{ text: edital1 }],
                     });
 
                 }
