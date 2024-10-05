@@ -34,7 +34,7 @@ const client = new MongoClient(uri, {
 });
 
 // Middleware to parse JSON request bodies
-//app.use(express.json());
+app.use(express.json());
 
 async function connectMongo() {
   try {
@@ -77,6 +77,11 @@ app.post('/historico', async (req, res) => {
     console.error("Error inserting conversation document:", err);
     res.status(500).json({ message: 'Erro interno do servidor' });
   }
+});
+
+// Endpoint to register login data
+app.get('/login', async (req, res) => {
+  console.log("Login");
 });
 
 // Endpoint to register login data
