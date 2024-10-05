@@ -13,7 +13,7 @@
                 message: true,
                 clearfix: true,
             }" ref="messageElements">
-            
+
                 <div v-html="message.text"></div>
 
                 <!-- {{ message.text }} -->
@@ -8946,7 +8946,7 @@ Assinatura
         // Função para registrar o histórico da conversa
         const registrarHistorico = async (usuario, mensagem) => {
             try {
-                const response = await axios.post('http://localhost:3000/historico', {
+                const response = await axios.post('http://chatbot-sabia-ifpr-f232b4.netlify.app/historico', {
                     usuario,
                     mensagem
                 });
@@ -8963,7 +8963,7 @@ Assinatura
         // Função para registrar o acesso ao Chatbot
         const registrarAcesso = async (usuario) => {
             try {
-                const response = await axios.post('http://localhost:3000/login', {
+                const response = await axios.post('http://chatbot-sabia-ifpr-f232b4.netlify.app/login', {
                     usuario,
                 });
 

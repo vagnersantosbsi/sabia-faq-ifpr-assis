@@ -7,7 +7,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const axios = require('axios'); // Importe a biblioteca axios
 
 const app = express();
-const port = 3000;
+const port = 80;
 app.use(express.static('public')); // Serve static files from the 'public' directory
 
 // Permitir requisições de múltiplas origens
