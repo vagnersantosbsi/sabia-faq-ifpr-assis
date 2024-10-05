@@ -10,16 +10,14 @@ Requisitos:
 
 Node.js e npm (ou yarn) instalados em seu sistema.
 
-Uma API Key da Google Cloud para usar o Gemini. https://cloud.google.com/generative-ai
+Uma API Key da Google Cloud para usar o Gemini. https://aistudio.google.com/app/
 
 Instalação:
 
 Clone este repositório:
 
-git clone https://github.com/seu-usuario/chatbot-sabia.git
-content_copy
-Use code with caution.
-Bash
+git clone https://github.com/vagnersantosbsi/chatbot-sabia.git
+
 
 Navegue até o diretório do projeto:
 
@@ -31,23 +29,17 @@ Bash
 Instale as dependências:
 
 npm install
-content_copy
-Use code with caution.
 Bash
 
 Crie um arquivo .env.local na raiz do projeto e adicione sua API Key:
 
 API_KEY=sua_api_key
-content_copy
-Use code with caution.
 
 Rodando o projeto:
 
 Inicie o servidor de desenvolvimento:
 
 npm run serve
-content_copy
-Use code with caution.
 Bash
 
 Acesse o chatbot no seu navegador em: http://localhost:5173
