@@ -1,6 +1,6 @@
-## ChatBot Sabiá - IFPR Campus Assis Chateaubriand 🐦
+<chat style="text-align:center">## ChatBot Sabiá - IFPR Campus Assis Chateaubriand 🐦</chat>
 
-<img src="src/assets/banner-geral-1536x864.png" alt="ChatBot Sabiá em ação" width="500">
+<img style="text-align:center" src="src/assets/banner-geral-1536x864.png" alt="ChatBot Sabiá em ação" width="500">
 
 Este repositório contém o código fonte do ChatBot Sabiá, um chatbot amigável e informativo desenvolvido para auxiliar estudantes interessados no Processo Seletivo do IFPR Campus Assis Chateaubriand.  O Sabiá é alimentado pelo modelo de linguagem Gemini da Google e está pronto para responder às suas perguntas sobre o processo seletivo, cursos, datas importantes, e muito mais!
 
