@@ -2,11 +2,11 @@
   "name": "faq-ifpr",
   "version": "0.1.0",
   "private": true,
-  "main": "server/server.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
@@ -15,7 +15,6 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
-    "faq-ifpr": "file:",
     "mongoose": "^8.7.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
