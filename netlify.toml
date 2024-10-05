@@ -1,0 +1,13 @@
+[build]
+command = "npm run build"
+
+[functions]
+# Arquivo de funções do Node
+node_bundler = "npm"
+# Comando para iniciar o servidor
+command = "npm start"
+# Diretório raiz das funções (se for diferente da raiz do projeto)
+directory = "src"
+# Caminho para o servidor do Node
+external_node_modules = true
+
