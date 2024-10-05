@@ -1,26 +1,26 @@
-//const { handler } = require('netlify/functions'); // Importar a biblioteca netlify/functions
-
+const { handler } = require('netlify/functions');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const axios = require('axios'); // Importe a biblioteca axios
+const axios = require('axios');
+
 
 const app = express();
-const port = 80;
-app.use(express.static('public')); // Serve static files from the 'public' directory
+//const port = 80;
+//app.use(express.static('public')); // Serve static files from the 'public' directory
 
 // Permitir requisições de múltiplas origens
-const allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8080', 'http://127.0.0.1:8080', 'https://sabia-faq-ifpr-assis.vercel.app/'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, origin);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// const allowedOrigins = ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8080', 'http://127.0.0.1:8080', 'https://sabia-faq-ifpr-assis.vercel.app/'];
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, origin);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// }));
 
 const uri =
   "mongodb+srv://sabia_bot:yX5zr}}T^E~8jLX@cluster0.prr5ivq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -34,7 +34,7 @@ const client = new MongoClient(uri, {
 });
 
 // Middleware to parse JSON request bodies
-app.use(express.json());
+//app.use(express.json());
 
 async function connectMongo() {
   try {
@@ -127,9 +127,9 @@ app.post('/login', async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Servidor rodando na porta ${port}`);
+// });
 
 // Graceful shutdown on termination
 process.on('SIGINT', async () => {
