@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/ChatBot.vue'
+import HelloWorld from './components/MenuPrincipal.vue'
 
 export default {
   name: 'App',
