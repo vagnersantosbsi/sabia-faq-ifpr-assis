@@ -11259,8 +11259,9 @@ Assinatura
 
  `;
 
+            var promptInicialDevBot = "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas."
 
-
+            var TodosOsEditais = edital1 + edital2 + edital3 + edital4;
 
             try {
                 // Adiciona os editais ao histórico da IA, mas não à exibição do usuário
@@ -11271,24 +11272,31 @@ Assinatura
                         role: 'user',
                         parts: [{ text: "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas." }],
                     });
-                    history.push({
-                        role: 'user',
-                        parts: [{ text: edital4 }],
-                    });
-                    history.push({
-                        role: 'user',
-                        parts: [{ text: edital3 }],
-                    });
+                    // history.push({
+                    //     role: 'user',
+                    //     parts: [{ text: edital4 }],
+                    // });
+                    // history.push({
+                    //     role: 'user',
+                    //     parts: [{ text: edital3 }],
+                    // });
+
+                    // history.push({
+                    //     role: 'user',
+                    //     parts: [{ text: edital2 }],
+                    // });
+
+                    // history.push({
+                    //     role: 'user',
+                    //     parts: [{ text: edital1 }],
+                    // });
 
                     history.push({
                         role: 'user',
-                        parts: [{ text: edital2 }],
+                        parts: [{ text: (TodosOsEditais + promptInicialDevBot) }],
                     });
 
-                    history.push({
-                        role: 'user',
-                        parts: [{ text: edital1 }],
-                    });
+                    
 
                 }
 
