@@ -20,7 +20,7 @@ import fotoAnna from "@/assets/foto-anna.jpg";
 import fotoNicolas from "@/assets/foto-nicolas.jpg";
 import fotoNikoli from "@/assets/foto-nikoli.jpg";
 import fotoNovo3 from "@/assets/foto-novo3.jpg";
-//import fotoAnna from "@/assets/foto-anna.jpg";
+import fotoNovo4 from "@/assets/foto-christopher.jpg";
 
 
 export default {
@@ -53,7 +53,7 @@ export default {
                 },
                 {
                     name: "Christopher",
-                    image: fotoNovo3,
+                    image: fotoNovo4,
                     link: "https://www.instagram.com/novoautor1",
                     description:
                         "Discente do Instituto Federal do Paraná - Campus Assis Chateaubriand",

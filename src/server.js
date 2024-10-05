@@ -8,7 +8,7 @@ const port = 3000;
 app.use(express.static('public')); // Serve static files from the 'public' directory
   
 // Permitir requisições de múltiplas origens
-const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500'];
+const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500', 'http://localhost:8080', 'http://127.0.0.1:8080', 'https://sabia-faq-ifpr-assis.vercel.app/'];
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
