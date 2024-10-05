@@ -9033,7 +9033,7 @@ Assinatura
     font-size: 50px;
     font-style: italic;
     color: #663399;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
 }
 
 .chat-container {
