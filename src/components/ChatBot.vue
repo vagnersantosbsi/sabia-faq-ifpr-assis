@@ -29,8 +29,7 @@
 <script>
 // import { ref, onMounted } from 'vue';
 //import { ref, onMounted, nextTick } from 'vue';
-import { ref, onMounted, nextTick, computed } from 'vue'; // Importe 'computed' aqui
-
+import { ref, onMounted, nextTick, computed } from 'vue'; //
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 
@@ -11423,8 +11422,9 @@ Assinatura
 }
 
 .chat-container {
+    width: 100%;
     padding: 20px;
-    margin: 0 auto;
+    margin: 5rem auto;
     max-width: 600px;
     background-color: #f4f4f9;
     /* background-image: url('../assets/banner-geral-1536x864.png'); */
