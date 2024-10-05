@@ -15,7 +15,6 @@ external_node_modules = [
     "vue",
     "vue-loader",
     "vue-template-compiler",
-    "@google/generative-ai",
     "axios",
     "core-js",
     "cors",
@@ -26,5 +25,6 @@ external_node_modules = [
     "stream",
     "stream-browserify",
     "vue-router",
+    "@google/generative-ai",
 ]
 
