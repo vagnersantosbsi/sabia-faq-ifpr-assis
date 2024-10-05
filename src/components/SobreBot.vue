@@ -19,6 +19,7 @@ import fotoNikoli from "@/assets/foto-nikoli.jpg";
 import fotoNovo3 from "@/assets/foto-novo3.jpg";
 import fotoNovo4 from "@/assets/foto-christopher.jpg";
 import fotoNovo5 from "@/assets/foto-kaike.jpg";
+import fotoNovo5 from "@/assets/foto-kaike.jpg";
 
 
 export default {
