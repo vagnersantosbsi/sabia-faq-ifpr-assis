@@ -13,6 +13,7 @@
                 message: true,
                 clearfix: true,
             }" ref="messageElements">
+            
                 <div v-html="message.text"></div>
 
                 <!-- {{ message.text }} -->
@@ -8830,7 +8831,7 @@ Assinatura
 
  `;
 
-            var promptInicialDevBot = "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas."
+            var promptInicialDevBot = "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas sem a utilização de asteriscos."
 
             var TodosOsEditais = edital1 + edital2; // + edital3 + edital4;
             edital3;

@@ -70,7 +70,7 @@ app.post('/historico', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { username } = req.body;
 
-  if (Object.values(req.body).length == 0 || username.trim().length == 0 ) {
+  if (Object.values(req.body).length == 0  ) {
     return res.status(500).json({ message: 'Usuário é obrigatório' });
   }
 
