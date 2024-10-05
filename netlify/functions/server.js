@@ -1,4 +1,4 @@
-const { handler } = require('netlify/functions');
+const { handler } = require('netlify/functions'); 
 const mongoose = require('mongoose');
 const cors = require('cors');
 const express = require('express');
@@ -36,6 +36,8 @@ const client = new MongoClient(uri, {
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
+
+
 async function connectMongo() {
   try {
     await client.connect();
@@ -44,17 +46,6 @@ async function connectMongo() {
     console.error("Error connecting to MongoDB Atlas:", err);
     process.exit(1); // Exit the process on connection failure
   }
-}
-
-// Função principal para lidar com as requisições
-async function handler(event, context) {
-  // ... (Suas funções para lidar com '/historico' e '/login') ...
-
-  // Retorna uma resposta padrão para o Netlify
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Hello from Netlify!' }),
-  };
 }
 
 connectMongo();
@@ -142,6 +133,14 @@ process.on('SIGINT', async () => {
   console.log("Conexão com o MongoDB Atlas fechada");
   process.exit(0);
 });
+
+
+async function handler(event, context) {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Hello from Netlify!' }),
+  };
+}
 
 exports.handler = handler;
 
