@@ -68,7 +68,11 @@ export default {
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
         const API_KEY = "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Substitua pelo modelo desejado
+		var promptInicialDevBot = "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas. Só responda sobre os cursos constantes nos Editais 87, 88, 89 e 90 do IFPR para o processo seletivo 2025, cuidado para não se enganar e informar curso que não existe nos Campus/ Cidade. A maioria dos usuários será de Assis Chateaubriand, portanto não erre as informações. Existe a possibilidade de pessoas de outras cidades buscarem informações contigo. As resposta deverá ser sempre informando e relacionando com o respectivo edital";
+		var ideiaDoChatBot = "Gemini, segue a ideia deste Chatbot, mensagem: Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar no Processo Seletivo do IFPR Campus Assis Chateaubriand! O que te traz por aqui? 😉";
+		var instrucoesIniciais = promptInicialDevBot + ideiaDoChatBot; 
+        const model = genAI.getGenerativeModel({model: 'gemini-1.5-flash',
+			system_instruction: instrucoesIniciais }); // Substitua pelo modelo desejado
 
         const generationConfig = {
             temperature: 1,
@@ -81,7 +85,7 @@ export default {
         const sendMessage = async () => {
             if (userInput.value.trim() === '') return;
 
-            var edital1 = `Edital N° 87, de 20 de setembro de 2024 PROCESSO SELETIVO IFPR 2025 - CURSOS TÉCNICOS INTEGRADOS AO ENSINO MÉDIO
+            var edital87 = `Edital N°87, de 20 de setembro de 2024 PROCESSO SELETIVO IFPR 2025 - CURSOS TÉCNICOS INTEGRADOS AO ENSINO MÉDIO
 
                     	O Reitor do Instituto Federal de Educação, Ciência e Tecnologia do Paraná, no uso da competência que lhe confere o Decreto de 06 de fevereiro de 2024, publicado no Diário Oficial da União no dia 07 de fevereiro de 2024, seção 2, página 01, torna público as normas que regem o Processo Seletivo IFPR 2025 para ingresso nos Cursos Técnicos Integrados ao Ensino Médio, na modalidade presencial, ofertados para o ano de 2025, considerando a política de inclusão do IFPR para o ingresso de estudantes nos cursos. As inscrições estarão abertas de 03 de outubro a 01 de novembro de 2024.
 
@@ -637,114 +641,85 @@ Nota 6,00: C- (Aprovado)
                     	ANEXO I - EDITAL Nº 87, DE 20 DE SETEMBRO DE 2024
 
                     	As informações sobre os cursos, como campus, nome do curso, nível de ensino, forma de oferta, número de turmas, turno, vagas, e duração, estão organizadas abaixo:
-Assis Chateaubriand:
-Técnico em Agropecuária: Médio, Integrado, 1 turma, Diurno (Manhã + 3 tardes por semana), 40 vagas, 3 anos de duração.
-Técnico em Comércio: Médio, Integrado, 1 turma, Diurno (Manhã + 1 tarde por semana), 40 vagas, 3 anos de duração.
-Técnico em Eletromecânica: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Informática para Internet: Médio, Integrado, 1 turma, Diurno (manhã + 2 tardes por semana), 40 vagas, 3 anos de duração.
-Astorga:
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Barracão:
-Técnico em Administração: Médio, Integrado, 2 turmas, Matutino, 80 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Campo Largo:
-Técnico em Administração: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Agroecologia: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Automação Industrial: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Mecânica: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Capanéma:
-Técnico em Cooperativismo: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Agroecologia: Médio, Integrado, 1 turma, Diurno (manhã e tarde), 40 vagas, 3 anos de duração.
-Cascavel:
-Técnico em Edificações: Médio, Integrado, 1 turma, Diurno (manhã+duas tardes), 40 vagas, 3 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Diurno (manhã+duas tardes), 40 vagas, 3 anos de duração.
-Técnico em Química: Médio, Integrado, 1 turma, Diurno (manhã+duas tardes), 40 vagas, 3 anos de duração.
-Colombo:
-Técnico em Administração: Médio, Integrado, 1 turma, Matutino + duas tardes por semana, 40 vagas, 3 anos de duração.
-Técnico em Alimentos: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Coronel Vivida:
-Técnico em Administração: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes), 40 vagas, 3 anos de duração.
-Técnico em Cooperativismo: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes), 40 vagas, 3 anos de duração.
-CR Ponta Grossa:
-Técnico em Informática: Médio, Integrado, 1 turma, Integral, 35 vagas, 4 anos de duração.
-CR Toledo:
-Técnico em Informática para Internet: Médio, Integrado, 1 turma, Diurno (manhã + 2 tardes por semana), 40 vagas, 3 anos de duração.
-Curitiba:
-Técnico em Administração: Médio, Integrado, 1 turma, Matutino, 30 vagas, 3 anos de duração.
-Técnico em Contabilidade: Médio, Integrado, 1 turma, Matutino, 30 vagas, 3 anos de duração.
-Técnico em Eletrônica: Médio, Integrado, 1 turma, Vespertino, 30 vagas, 3 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Vespertino, 30 vagas, 4 anos de duração.
-Técnico em Mecânica: Médio, Integrado, 1 turma, Vespertino, 30 vagas, 3 anos de duração.
-Técnico em Petróleo e Gás: Médio, Integrado, 1 turma, Matutino, 30 vagas, 3 anos de duração.
-Técnico em Processos Fotográficos: Médio, Integrado, 1 turma, Vespertino, 30 vagas, 3 anos de duração.
-Técnico em Programação de Jogos Digitais: Médio, Integrado, 1 turma, Matutino, 30 vagas, 4 anos de duração.
-Foz do Iguaçu:
-Técnico em Aquicultura: Médio, Integrado, 1 turma, Diurno (Manhã + 1 tarde), 40 vagas, 3 anos de duração.
-Técnico em Desenvolvimento de Sistemas: Médio, Integrado, 1 turma, Integral, 40 vagas, 4 anos de duração.
-Técnico em Edificações: Médio, Integrado, 1 turma, Integral, 40 vagas, 4 anos de duração.
-Técnico em Meio Ambiente: Médio, Integrado, 1 turma, Integral, 40 vagas, 4 anos de duração.
-Goioerê:
-Técnico em Informática: Médio, Integrado, 2 turmas, Matutino, 80 vagas, 4 anos de duração.
-Irati:
-Técnico em Agroecologia: Médio, Integrado, 1 turma, Matutino, 40 vagas, 3 anos de duração.
-Técnico em Agroecologia: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 3 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 3 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 3 anos de duração.
-Ivaíporã:
-Técnico em Agropecuária: Média, Integrado, 1 turma, Diurno (Matutino + 1 tarde), 35 vagas, 3 anos de duração.
-Técnico em Eletrotécnica: Médio, Integrado, 1 turma, Diurno (Matutino + 1 tarde), 40 vagas, 3 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Diurno (Matutino + 1 tarde), 40 vagas, 3 anos de duração.
-Jacarezinho:
-Técnico em Alimentos: Médio, Integrado, 1 turma, Diurno, 40 vagas, 3,5 a 4 anos de duração.
-Técnico em Eletrotécnica: Médio, Integrado, 1 turma, Diurno, 20 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Diurno, 40 vagas, 4 anos de duração.
-Técnico em Mecânica: Médio, Integrado, 1 turma, Diurno, 20 vagas, 4 anos de duração.
-Jaguariaíva:
-Técnico em Alimentos: Médio, Integrado, 1 turma, Diurno (manhã e tarde), 40 vagas, 4 anos de duração.
-Técnico em Biotecnologia: Médio, Integrado, 1 turma, Diurno (manhã e tarde), 40 vagas, 4 anos de duração.
-Londrina:
-Técnico em Biotecnologia: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Palmas:
-Técnico em Alimentos: Médio, Integrado, 1 turma, Diurno (Vespertino + 2 manhãs por semana), 40 vagas, 3 anos de duração.
-Técnico em Informática para Internet: Médio, Integrado, 1 turma, Diurno (Vespertino + 2 manhãs por semana), 40 vagas, 3 anos de duração.
-Técnico em Serviços Jurídicos: Médio, Integrado, 1 turma, Diurno (Vespertino + 2 manhãs por semana), 40 vagas, 3 anos de duração.
-Paranaguá:
-Técnico em Informática: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Mecânica: Médio, Integrado, 1 turma, Diurno (tarde e manhã), 40 vagas, 4 anos de duração.
-Técnico em Meio Ambiente: Médio, Integrado, 1 turma, Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Produção Cultural: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Paranavaí:
-Técnico em Agroindústria: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Mecatrônica: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Pinháis:
-Técnico em Administração: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Pitanga:
-Técnico em Alimentos: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Técnico em Cooperativismo: Médio, Integrado, 1 turma, Matutino, 40 vagas, 4 anos de duração.
-Quedas do Iguaçu:
-Técnico em Informática: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes por semana), 38 vagas, 3 anos de duração.
-Técnico em Meio Ambiente: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes por semana), 38 vagas, 3 anos de duração.
-Telêmaco Borba:
-Técnico em Automação Industrial: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Informática para Internet: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Mecânica: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Programação de Jogos Digitais: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Umuarama:
-Técnico em Edificações: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Informática: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-Técnico em Química: Médio, Integrado, 1 turma, Matutino/Vespertino, 40 vagas, 4 anos de duração.
-União da Vitória:
-Técnico em Informática: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes), 40 vagas, 3 anos de duração.
-Técnico em Meio Ambiente: Médio, Integrado, 1 turma, Diurno (Manhã + 2 tardes), 40 vagas, 3 anos de duração.
-Observações:
-¹ - O turno pode ter variações de horários dentro do dia.
-² - O turno inclui aulas na parte da manhã e em apenas uma tarde durante a semana.
-
+CAMPUS | CURSO | NÍVEL DE ENSINO | FORMA DE OFERTA | TURMAS | TURNO | VAGAS | DURAÇÃO
+------- | -------- | -------- | -------- | -------- | -------- | -------- | --------
+Assis Chateaubriand | Técnico em Agropecuária | Médio | Integrado | 1 | Diurno (Manhã + 3 tardes por semana) | 40 | 3 anos
+Assis Chateaubriand | Técnico em Comércio | Médio | Integrado | 1 | Diurno (Manhã + 1 tarde por semana) | 40 | 3 anos
+Assis Chateaubriand | Técnico em Eletromecânica | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Assis Chateaubriand | Técnico em Informática para Internet | Médio | Integrado | 1 | Diurno (manhã + 2 tardes por semana) | 40 | 3 anos
+Astorga | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Barracão | Técnico em Administração | Médio | Integrado | 2 | Matutino | 80 | 4 anos
+Barracão | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Campo Largo | Técnico em Administração | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Campo Largo | Técnico em Agroecologia | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Campo Largo | Técnico em Automação Industrial | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Campo Largo | Técnico em Mecânica | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Capanéma | Técnico em Cooperativismo | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Capanéma | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Capanéma | Técnico em Agroecologia | Médio | Integrado | 1 | Diurno (manhã e tarde) | 40 | 3 anos
+Cascavel | Técnico em Edificações | Médio | Integrado | 1 | Diurno (manhã+duas tardes) | 40 | 3 anos
+Cascavel | Técnico em Informática | Médio | Integrado | 1 | Diurno (manhã+duas tardes) | 40 | 3 anos
+Cascavel | Técnico em Química | Médio | Integrado | 1 | Diurno (manhã+duas tardes) | 40 | 3 anos
+Colombo | Técnico em Administração | Médio | Integrado | 1 | Matutino + duas tardes por semana | 40 | 3 anos
+Colombo | Técnico em Alimentos | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Colombo | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Coronel Vivida | Técnico em Administração | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes) | 40 | 3 anos
+Coronel Vivida | Técnico em Cooperativismo | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes) | 40 | 3 anos
+CR Ponta Grossa | Técnico em Informática | Médio | Integrado | 1 | Integral | 35 | 4 anos
+CR Toledo | Técnico em Informática para Internet | Médio | Integrado | 1 | Diurno (manhã + 2 tardes por semana) | 40 | 3 anos
+Curitiba | Técnico em Administração | Médio | Integrado | 1 | Matutino | 30 | 3 anos
+Curitiba | Técnico em Contabilidade | Médio | Integrado | 1 | Matutino | 30 | 3 anos
+Curitiba | Técnico em Eletrônica | Médio | Integrado | 1 | Vespertino | 30 | 3 anos
+Curitiba | Técnico em Informática | Médio | Integrado | 1 | Vespertino | 30 | 4 anos
+Curitiba | Técnico em Mecânica | Médio | Integrado | 1 | Vespertino | 30 | 3 anos
+Curitiba | Técnico em Petróleo e Gás | Médio | Integrado | 1 | Matutino | 30 | 3 anos
+Curitiba | Técnico em Processos Fotográficos | Médio | Integrado | 1 | Vespertino | 30 | 3 anos
+Curitiba | Técnico em Programação de Jogos Digitais | Médio | Integrado | 1 | Matutino | 30 | 4 anos
+Foz do Iguaçu | Técnico em Aquicultura | Médio | Integrado | 1 | Diurno (Manhã + 1 tarde) | 40 | 3 anos
+Foz do Iguaçu | Técnico em Desenvolvimento de Sistemas | Médio | Integrado | 1 | Integral | 40 | 4 anos
+Foz do Iguaçu | Técnico em Edificações | Médio | Integrado | 1 | Integral | 40 | 4 anos
+Foz do Iguaçu | Técnico em Meio Ambiente | Médio | Integrado | 1 | Integral | 40 | 4 anos
+Goioerê | Técnico em Informática | Médio | Integrado | 2 | Matutino | 80 | 4 anos
+Irati | Técnico em Agroecologia | Médio | Integrado | 1 | Matutino | 40 | 3 anos
+Irati | Técnico em Agroecologia | Médio | Integrado | 1 | Vespertino | 40 | 3 anos
+Irati | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 3 anos
+Irati | Técnico em Informática | Médio | Integrado | 1 | Vespertino | 40 | 3 anos
+Ivaíporã | Técnico em Agropecuária | Média | Integrado | 1 | Diurno (Matutino + 1 tarde) | 35 | 3 anos
+Ivaíporã | Técnico em Eletrotécnica | Médio | Integrado | 1 | Diurno (Matutino + 1 tarde) | 40 | 3 anos
+Ivaíporã | Técnico em Informática | Médio | Integrado | 1 | Diurno (Matutino + 1 tarde) | 40 | 3 anos
+Jacarezinho | Técnico em Alimentos | Médio | Integrado | 1 | Diurno | 40 | 3,5 a 4 anos
+Jacarezinho | Técnico em Eletrotécnica | Médio | Integrado | 1 | Diurno | 20 | 4 anos
+Jacarezinho | Técnico em Informática | Médio | Integrado | 1 | Diurno | 40 | 4 anos
+Jacarezinho | Técnico em Mecânica | Médio | Integrado | 1 | Diurno | 20 | 4 anos
+Jaguariaíva | Técnico em Alimentos | Médio | Integrado | 1 | Diurno (manhã e tarde) | 40 | 4 anos
+Jaguariaíva | Técnico em Biotecnologia | Médio | Integrado | 1 | Diurno (manhã e tarde) | 40 | 4 anos
+Londrina | Técnico em Biotecnologia | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Londrina | Técnico em Informática | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Palmas | Técnico em Alimentos | Médio | Integrado | 1 | Diurno (Vespertino + 2 manhãs por semana) | 40 | 3 anos
+Palmas | Técnico em Informática para Internet | Médio | Integrado | 1 | Diurno (Vespertino + 2 manhãs por semana) | 40 | 3 anos
+Palmas | Técnico em Serviços Jurídicos | Médio | Integrado | 1 | Diurno (Vespertino + 2 manhãs por semana) | 40 | 3 anos
+Paranaguá | Técnico em Informática | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Paranaguá | Técnico em Mecânica | Médio | Integrado | 1 | Diurno (tarde e manhã) | 40 | 4 anos
+Paranaguá | Técnico em Meio Ambiente | Médio | Integrado | 1 | Vespertino | 40 | 4 anos
+Paranaguá | Técnico em Produção Cultural | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Paranavaí | Técnico em Agroindústria | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Paranavaí | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Paranavaí | Técnico em Mecatrônica | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Pinháis | Técnico em Administração | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Pinháis | Técnico em Informática | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Pitanga | Técnico em Alimentos | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Pitanga | Técnico em Cooperativismo | Médio | Integrado | 1 | Matutino | 40 | 4 anos
+Quedas do Iguaçu | Técnico em Informática | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes por semana) | 38 | 3 anos
+Quedas do Iguaçu | Técnico em Meio Ambiente | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes por semana) | 38 | 3 anos
+Telêmaco Borba | Técnico em Automação Industrial | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Telêmaco Borba | Técnico em Informática para Internet | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Telêmaco Borba | Técnico em Mecânica | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Telêmaco Borba | Técnico em Programação de Jogos Digitais | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Umuarama | Técnico em Edificações | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Umuarama | Técnico em Informática | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+Umuarama | Técnico em Química | Médio | Integrado | 1 | Matutino/Vespertino | 40 | 4 anos
+União da Vitória | Técnico em Informática | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes) | 40 | 3 anos
+União da Vitória | Técnico em Meio Ambiente | Médio | Integrado | 1 | Diurno (Manhã + 2 tardes) | 40 | 3 anos
 
                     	¹Os cursos cujos turnos estão assinalados como sendo “Diurno (matutino e vespertino)”, “Diurno (manhã e tarde)”, “Diurno (manhã+duas tardes)”, “Matutino e Vespertino”, “Matutino + duas tardes por semana”, “Diurno”, “Matutino/Vespertino” e “Diurno (Vespertino + 2 manhãs por semana)”, “Diurno (Manhã + 2 tardes por semana)” aparecerão no Portal do Candidato do IFPR como turno “Integral”, sem prejuízo à informação deste quadro de vagas e a consequente necessidade de o estudante cumpri-la.
 
@@ -1296,167 +1271,35 @@ Curso 5: 1 vaga
 
                     	ENDEREÇOS DOS CAMPI DO IFPR
 
-                    	CAMPUS
+                    	CAMPUS | ENDEREÇO | PÁGINA ELETRÔNICA
+------- | -------- | --------
+Arapongas | Rua Surucuá Açu, 321 – Vila Araponguinha | https://ifpr.edu.br/arapongas/
+Astorga | Rodovia PR 454, Contorno Norte | https://ifpr.edu.br/astorga/
+Assis Chateaubriand | Av. Cívica, 475 – Centro Cívico | https://ifpr.edu.br/assis-chateaubriand/
+Barracão | Rodovia BR 163, nº 2115 - Industrial, Barracão | https://ifpr.edu.br/barracao/
+Campo Largo | R. Eng. Tourinho, 829 - Vila Solene | https://ifpr.edu.br/campo-largo/
+Capanema | Rua Cariris nº 750 Bairro Santa Bárbara | https://ifpr.edu.br/capanema/
+Cascavel | Avenida das Pombas, 2020 - Floresta | https://ifpr.edu.br/cascavel/
+Colombo | Rua Antonio Chemin, 28, São Gabriel | https://ifpr.edu.br/colombo/
+Coronel Vivida | PR 562, Flor da Serra | https://ifpr.edu.br/coronel-vivida/
+Curitiba | R. João Negrão, 1285 | https://ifpr.edu.br/curitiba/
+Foz do Iguaçu | Avenida Araucária, 780, Bairro Vila A | https://ifpr.edu.br/foz-do-iguacu/
+Goioerê | Rodovia Luiz Dechiche, s/nº | https://ifpr.edu.br/goioere/
+Irati | Rua Pedro Koppe, 100 – Vila Matilde | https://ifpr.edu.br/irati/
+Ivaíporã | Rua Max Arthur Greipel, nº 505 | https://ifpr.edu.br/ivaipora/
+Jacarezinho | Avenida Dr. Tito nº: 801 – Jardim Panorama | https://ifpr.edu.br/jacarezinho/
+Jaguariaíva | Av. Eloa Martins Passos Felix – Rod. 151 Km 213,7 | https://ifpr.edu.br/jaguariaiva/
+Londrina | Rua João XXIII, nº 600, Jardim Dom Bosco | https://ifpr.edu.br/londrina/
+Palmas | Av. Bento Munhoz da Rocha Neto, s/nº | https://ifpr.edu.br/palmas/
+Paranaguá | Rua Antonio Carlos Rodrigues, n.º 453 – Porto Seguro | https://ifpr.edu.br/paranagua/
+Paranavaí | Rua José Felipe Tequinha, 1400 – Jardim das Nações | https://ifpr.edu.br/paranavai/
+Pinháis | Rua Humberto de Alencar Castelo Branco, 1575 Jardim Amélia | https://ifpr.edu.br/pinhais/
+Pitanga | Rua José de Alencar, 1.080 – Vila Planalto | https://ifpr.edu.br/pitanga/
+Quedas do Iguaçu | Rua, Marginal Imbirama, 300 - linha Tapuí | https://ifpr.edu.br/quedas-do-iguacu/
+Telêmaco Borba | Rodovia PR 160 – km 19,5 – Jardim Bandeirantes | https://ifpr.edu.br/telemaco-borba/
+Umuarama | Rodovia PR 323, KM 302, Parque Industrial | https://ifpr.edu.br/umuarama/
+União da Vitória | Av. Paula Freitas, 2800 - São Braz | https://ifpr.edu.br/uniao-da-vitoria/
 
-                    	ENDEREÇO
-
-                    	PÁGINA ELETRÔNICA
-
-                    	ARAPONGAS
-
-                    	Rua Surucuá Açu, 321 – Vila Araponguinha
-
-                    	https://ifpr.edu.br/arapongas/
-
-                    	ASTORGA
-
-                    	Rodovia PR 454, Contorno Norte
-
-                    	https://ifpr.edu.br/astorga/
-
-                    	ASSIS CHATEAUBRIAND
-
-                    	Av. Cívica, 475 – Centro Cívico
-
-                    	https://ifpr.edu.br/assis-chateaubriand/
-
-                    	BARRACÃO
-
-                    	Rodovia BR 163, nº 2115 - Industrial, Barracão
-
-                    	https://ifpr.edu.br/barracao/
-
-                    	CAMPO LARGO
-
-                    	R. Eng. Tourinho, 829 - Vila Solene
-
-                    	https://ifpr.edu.br/campo-largo/
-
-                    	CAPANEMA
-
-                    	Rua Cariris nº 750 Bairro Santa Bárbara
-
-                    	https://ifpr.edu.br/capanema/
-
-                    	CASCAVEL
-
-                    	Avenida das Pombas, 2020 - Floresta
-
-                    	https://ifpr.edu.br/cascavel/
-
-                    	COLOMBO
-
-                    	Rua Antonio Chemin, 28, São Gabriel
-
-                    	https://ifpr.edu.br/colombo/
-
-                    	CORONEL VIVIDA
-
-                    	PR 562, Flor da Serra
-
-                    	https://ifpr.edu.br/coronel-vivida/
-
-                    	CURITIBA
-
-                    	R. João Negrão, 1285
-
-                    	https://ifpr.edu.br/curitiba/
-
-                    	FOZ DO IGUAÇU
-
-                    	Avenida Araucária, 780, Bairro Vila A
-
-                    	https://ifpr.edu.br/foz-do-iguacu/
-
-                    	GOIOERÊ
-
-                    	Rodovia Luiz Dechiche, s/nº
-
-                    	https://ifpr.edu.br/goioere/
-
-                    	IRATI
-
-                    	Rua Pedro Koppe, 100 – Vila Matilde
-
-                    	https://ifpr.edu.br/irati/
-
-                    	IVAIPORÃ
-
-                    	Rua Max Arthur Greipel, nº 505
-
-                    	https://ifpr.edu.br/ivaipora/
-
-                    	JACAREZINHO
-
-                    	Avenida Dr. Tito nº: 801 – Jardim Panorama
-
-                    	https://ifpr.edu.br/jacarezinho/
-
-                    	JAGUARIAÍVA
-
-                    	Av. Eloa Martins Passos Felix – Rod. 151 Km 213,7
-
-                    	https://ifpr.edu.br/jaguariaiva/
-
-                    	LONDRINA
-
-                    	Rua João XXIII, nº 600, Jardim Dom Bosco
-
-                    	https://ifpr.edu.br/londrina/
-
-                    	PALMAS
-
-                    	Av. Bento Munhoz da Rocha Neto, s/nº
-
-                    	https://ifpr.edu.br/palmas/
-
-                    	PARANAGUÁ
-
-                    	Rua Antonio Carlos Rodrigues, n.º 453 – Porto Seguro
-
-                    	https://ifpr.edu.br/paranagua/
-
-                    	PARANAVAÍ
-
-                    	Rua José Felipe Tequinha, 1400 – Jardim das Nações
-
-                    	https://ifpr.edu.br/paranavai/
-
-                    	PINHAIS
-
-                    	Rua Humberto de Alencar Castelo Branco, 1575 Jardim Amélia
-
-                    	https://ifpr.edu.br/pinhais/
-
-                    	PITANGA
-
-                    	Rua José de Alencar, 1.080 – Vila Planalto
-
-                    	https://ifpr.edu.br/pitanga/
-
-                    	QUEDAS DO IGUAÇU
-
-                    	Rua, Marginal Imbirama, 300 - linha Tapuí
-
-                    	https://ifpr.edu.br/quedas-do-iguacu/
-
-                    	TELÊMACO BORBA
-
-                    	Rodovia PR 160 – km 19,5 – Jardim Bandeirantes
-
-                    	https://ifpr.edu.br/telemaco-borba/
-
-                    	UMUARAMA
-
-                    	Rodovia PR 323, KM 302, Parque Industrial
-
-                    	https://ifpr.edu.br/umuarama/
-
-                    	UNIÃO DA VITÓRIA
-
-                    	Av. Paula Freitas, 2800 - São Braz
-
-                    	https://ifpr.edu.br/uniao-da-vitoria/
 
                     	ANEXO VI - EDITAL Nº 87, DE 20 DE SETEMBRO DE 2024
 
@@ -1786,7 +1629,7 @@ Curso 5: 1 vaga
                     	INSTITUTO FEDERAL DO PARANÁ | GR/DEAC/IFPR-DEAC/GR
                     	Rua Emilio Bertolini, nº 54, Curitiba - PR | CEP CEP 82920-030 - Brasil
 `;
-            var edital2 = `Edital N° 88, de 20 de setembro de 2024
+            var edital88 = `Edital N°88, de 20 de setembro de 2024
 
                     	PROCESSO SELETIVO IFPR 2025 - CURSOS TÉCNICOS SUBSEQUENTES AO ENSINO MÉDIO
 
@@ -2429,407 +2272,35 @@ Nota 6: C-
 
                     	Oferta de Cursos Técnicos Subsequentes ao Ensino Médio - 2023
 
-O presente quadro apresenta a oferta de cursos técnicos subsequentes ao ensino médio, com informações sobre campus, curso, nível de ensino, forma de oferta, turmas, turno, vagas e duração do curso.
-
-Campus Arapongas:
-
-Curso: Técnico em Melhoria de Processos
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Campus Assis Chateaubriand:
-
-Curso: Técnico em Agropecuária
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Alimentos
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Eletromecânica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Eletrotécnica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Campus Astorga:
-
-Curso: Técnico em Desenvolvimento de Sistemas
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Campus Campo Largo:
-
-Curso: Técnico em Mecânica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Campus Curitiba:
-
-Curso: Técnico em Condomínio
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 1 ano
-
-Curso: Técnico em Edificações
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Eletromecânica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Eletrotécnica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 35
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Enfermagem
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Matutino
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Eventos
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 35
-
-Duração do Curso: 1 ano
-
-Curso: Técnico em Mecânica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 36
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Processos Fotográficos
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Matutino
-
-Vagas: 30
-
-Duração do Curso: 1,5 anos
-
-Curso: Técnico em Produção de Áudio e Vídeo
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Prótese Dentária
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Vespertino
-
-Vagas: 25
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Prótese Dentária
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 25
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Radiologia
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Matutino
-
-Vagas: 35
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Telecomunicações
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 36
-
-Duração do Curso: 2 anos
-
-Campus Foz do Iguaçu:
-
-Curso: Técnico em Gastronomia
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Vespertino
-
-Vagas: 22
-
-Duração do Curso: 1 ano
-
-Campus Jacarezinho:
-
-Curso: Técnico em Teatro
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Campus Londrina:
-
-Curso: Técnico em Enfermagem
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Diurno¹
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Massoterapia
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Matutino
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Prótese Dentária
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-Curso: Técnico em Saúde Bucal
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 30
-
-Duração do Curso: 2 anos
-
-Campus Paranavaí:
-
-Curso: Técnico em Eletromecânica
-
-Nível de Ensino: Médio
-
-Forma de Oferta: Subsequente
-
-Turmas: 1
-
-Turno: Noturno
-
-Vagas: 40
-
-Duração do Curso: 2 anos
-
-¹ A oferta de turmas no turno diurno está condicionada à demanda.
-
-Para mais informações sobre os cursos, consulte o site do IFPR.
+Campus | Curso | Nível de Ensino | Forma de Oferta | Turmas | Turno | Vagas | Duração do Curso
+------- | -------- | -------- | -------- | -------- | -------- | -------- | --------
+Arapongas | Técnico em Melhoria de Processos | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Assis Chateaubriand | Técnico em Agropecuária | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Assis Chateaubriand | Técnico em Alimentos | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Assis Chateaubriand | Técnico em Eletromecânica | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Assis Chateaubriand | Técnico em Eletrotécnica | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Astorga | Técnico em Desenvolvimento de Sistemas | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Campo Largo | Técnico em Mecânica | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Curitiba | Técnico em Condomínio | Médio | Subsequente | 1 | Noturno | 40 | 1 ano
+Curitiba | Técnico em Edificações | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Curitiba | Técnico em Eletromecânica | Médio | Subsequente | 1 | Noturno | 30 | 2 anos
+Curitiba | Técnico em Eletrotécnica | Médio | Subsequente | 1 | Noturno | 35 | 2 anos
+Curitiba | Técnico em Enfermagem | Médio | Subsequente | 1 | Matutino | 30 | 2 anos
+Curitiba | Técnico em Eventos | Médio | Subsequente | 1 | Noturno | 35 | 1 ano
+Curitiba | Técnico em Mecânica | Médio | Subsequente | 1 | Noturno | 36 | 2 anos
+Curitiba | Técnico em Processos Fotográficos | Médio | Subsequente | 1 | Matutino | 30 | 1,5 anos
+Curitiba | Técnico em Produção de Áudio e Vídeo | Médio | Subsequente | 1 | Noturno | 30 | 2 anos
+Curitiba | Técnico em Prótese Dentária | Médio | Subsequente | 1 | Vespertino | 25 | 2 anos
+Curitiba | Técnico em Prótese Dentária | Médio | Subsequente | 1 | Noturno | 25 | 2 anos
+Curitiba | Técnico em Radiologia | Médio | Subsequente | 1 | Matutino | 35 | 2 anos
+Curitiba | Técnico em Telecomunicações | Médio | Subsequente | 1 | Noturno | 36 | 2 anos
+Foz do Iguaçu | Técnico em Gastronomia | Médio | Subsequente | 1 | Vespertino | 22 | 1 ano
+Jacarezinho | Técnico em Teatro | Médio | Subsequente | 1 | Noturno | 30 | 2 anos
+Londrina | Técnico em Enfermagem | Médio | Subsequente | 1 | Diurno¹ | 30 | 2 anos
+Londrina | Técnico em Massoterapia | Médio | Subsequente | 1 | Matutino | 40 | 2 anos
+Londrina | Técnico em Prótese Dentária | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
+Londrina | Técnico em Saúde Bucal | Médio | Subsequente | 1 | Noturno | 30 | 2 anos
+Paranavaí | Técnico em Eletromecânica | Médio | Subsequente | 1 | Noturno | 40 | 2 anos
 
 
                     	¹O curso cujo turno está assinalado como sendo “Diurno”, aparece no Portal do Candidato do IFPR como turno “Integral”, sem prejuízo à informação deste quadro de vagas e a consequente necessidade de o estudante cumpri-la.
@@ -3223,7 +2694,7 @@ AC: Ampla Concorrência.
 
                     	b) O sistema fará a média.
 `;
-            var edital3 = `Edital N° 89, de 20 de setembro de 2024
+            var edital89 = `Edital N°89, de 20 de setembro de 2024
 
 PROCESSO SELETIVO IFPR 2025 - CURSOS SUPERIORES DE LICENCIATURA
 
@@ -3783,51 +3254,35 @@ QRCode Assinatura
 A autenticidade deste documento pode ser conferida no site https://sei.ifpr.edu.br/sei/controlador_externo.php?acao=documento_conferir&id_orgao_acesso_externo=0, informando o código verificador 3185080 e o código CRC AA4C2607.
 
 ANEXO I - EDITAL IFPR Nº 89, DE 20 DE setembro DE 2024
-Oferta de Cursos de Licenciatura - 2023
-A Universidade oferece uma variedade de cursos de Licenciatura em diversos campi, com diferentes opções de turno e vagas.
-Astorga:
-Pedagogia - Noturno - 40 vagas - 4 anos de duração
-Campo Largo:
-Matemática - Noturno - 40 vagas - 4 anos de duração
-Capanemã:
-Matemática - Noturno - 40 vagas - 4 anos de duração
-Cascavel:
-Química - Noturno - 40 vagas - 4 anos de duração
-Colombo:
-História - Noturno - 40 vagas - 4 anos de duração
-Pedagogia - Noturno - 40 vagas - 4 anos de duração
-Curitiba:
-Pedagogia - Vespertino - 40 vagas - 4 anos de duração
-Foz do Iguaçu:
-Física - Noturno - 40 vagas - 4,5 anos de duração
-Irati:
-Química - Noturno - 40 vagas - 4 anos de duração
-Ivaíporã:
-Física - Noturno - 36 vagas - 4,5 anos de duração
-Jacarezinho:
-Química - Noturno - 40 vagas - 4 anos de duração
-Londrina:
-Ciências Biológicas - Noturno - 40 vagas - 4 anos de duração
-Palmas:
-Educação Física - Até o 4º período: Noturno + 1 tarde; A partir do 5º período: Licenciatura - Noturno, Bacharelado - Vespertino - 50 vagas - 4 anos de duração
-Química - Noturno + 1 tarde - 40 vagas - 4 anos de duração
-Artes Visuais - Noturno - 40 vagas - 4 anos de duração
-Ciências Biológicas - Noturno + 1 tarde - 40 vagas - 4 anos de duração
-Letras - Português/Inglês - Noturno - 40 vagas - 4 anos de duração
-Pedagogia - Noturno + 1 tarde - 40 vagas - 4 anos de duração
-Paranaguá:
-Ciências Sociais - Noturno - 40 vagas - 4 anos de duração
-Física - Noturno - 40 vagas - 4 anos de duração
-Paranavaí:
-Química - Noturno - 40 vagas - 4 anos de duração
-Pitanga:
-Pedagogia - Noturno - 40 vagas - 4 anos de duração
-Química - Noturno - 40 vagas - 4 anos de duração
-Telêmaco Borba:
-Física - Noturno - 40 vagas - 4 anos de duração
-Umuarama:
-Ciências Biológicas - Noturno - 40 vagas - 4 anos de duração
-Química - Noturno - 40 vagas - 4 anos de duração
+Oferta de Cursos de Licenciatura
+CAMPUS | CURSO | TURNO | VAGAS | DURAÇÃO
+------- | -------- | -------- | -------- | --------
+Astorga | Pedagogia | Noturno | 40 | 4 anos
+Campo Largo | Matemática | Noturno | 40 | 4 anos
+Capanemã | Matemática | Noturno | 40 | 4 anos
+Cascavel | Química | Noturno | 40 | 4 anos
+Colombo | História | Noturno | 40 | 4 anos
+Colombo | Pedagogia | Noturno | 40 | 4 anos
+Curitiba | Pedagogia | Vespertino | 40 | 4 anos
+Foz do Iguaçu | Física | Noturno | 40 | 4,5 anos
+Irati | Química | Noturno | 40 | 4 anos
+Ivaíporã | Física | Noturno | 36 | 4,5 anos
+Jacarezinho | Química | Noturno | 40 | 4 anos
+Londrina | Ciências Biológicas | Noturno | 40 | 4 anos
+Palmas | Educação Física | Noturno + 1 tarde (até o 4º período) / Noturno (Licenciatura) + Vespertino (Bacharelado) (a partir do 5º período) | 50 | 4 anos
+Palmas | Química | Noturno + 1 tarde | 40 | 4 anos
+Palmas | Artes Visuais | Noturno | 40 | 4 anos
+Palmas | Ciências Biológicas | Noturno + 1 tarde | 40 | 4 anos
+Palmas | Letras - Português/Inglês | Noturno | 40 | 4 anos
+Palmas | Pedagogia | Noturno + 1 tarde | 40 | 4 anos
+Paranaguá | Ciências Sociais | Noturno | 40 | 4 anos
+Paranaguá | Física | Noturno | 40 | 4 anos
+Paranavaí | Química | Noturno | 40 | 4 anos
+Pitanga | Pedagogia | Noturno | 40 | 4 anos
+Pitanga | Química | Noturno | 40 | 4 anos
+Telêmaco Borba | Física | Noturno | 40 | 4 anos
+Umuarama | Ciências Biológicas | Noturno | 40 | 4 anos
+Umuarama | Química | Noturno | 40 | 4 anos
 
 
 
@@ -3840,7 +3295,7 @@ Química - Noturno - 40 vagas - 4 anos de duração
 
 
 `;
-            var edital4 = `Edital N° 90, de 20 de setembro de 2024
+            var edital90 = `Edital N°90, de 20 de setembro de 2024
 
 PROCESSO SELETIVO IFPR 2025 - CURSOS SUPERIORES DE BACHARELADO E TECNOLOGIA
 
@@ -4454,85 +3909,63 @@ A autenticidade deste documento pode ser conferida no site https://sei.ifpr.edu.
 
 ANEXO I - EDITAL Nº 90, DE 20 DE setembro DE 2024
 
-Oferta de Cursos de Bacharelado e Tecnologia - 2023
-Este documento apresenta as informações sobre os cursos de Bacharelado e Tecnologia oferecidos pela instituição em 2023. A tabela inclui informações sobre o campus, nome do curso, nível de ensino, modalidade, número de turmas, turno, número de vagas e duração do curso.
-Assis Chateaubriand:
-Gestão Comercial (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2 anos.
-Barracão:
-Tecnologia em Gestão Ambiental (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Campo Largo:
-Processos Gerenciais (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2,5 anos.
-Materiais (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Engenharia Elétrica (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 5 anos.
-Agroecologia (Tecnologia): Oferecido no turno matutino com 40 vagas e duração de 3 anos.
-Cascavel:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Tecnologia em Gestão Ambiental (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2 anos.
-Colombo:
-Alimentos (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Processos Gerenciais (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2,5 anos.
-Coronel Vivida:
-Gestão Financeira (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2,5 anos.
-Curitiba:
-Gestão Pública (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2,5 anos.
-Massoterapia (Tecnologia): Oferecido no turno matutino com 35 vagas e duração de 3 anos.
-Processos Gerenciais (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2 anos.
-Processos Escolares (Tecnologia): Oferecido no turno vespertino com 40 vagas e duração de 3 anos.
-Secretariado (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 2 anos.
-Ciências Contábeis (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Foz do Iguaçu:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Engenharia de Aquicultura (Bacharelado): Oferecido no turno noturno com 36 vagas e duração de 5 anos.
-Gastronomia (Tecnologia): Oferecido no turno matutino com 40 vagas e duração de 2 anos.
-Irati:
-Agronomia (Bacharelado): Oferecido no turno vespertino com 40 vagas e duração de 5 anos.
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Ivaíporã:
-Engenharia Agronômica (Bacharelado): Oferecido em regime integral com 40 vagas e duração de 5 anos.
-Sistemas de Informação (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Jacarezinho:
-Engenharia de Controle e Automação (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 5 anos.
-Sistemas para a Internet (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Jaguariaíva:
-Gestão de Qualidade (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Londrina:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno matutino com 40 vagas e duração de 3 anos.
-Palmas:
-Administração (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Agronomia (Bacharelado): Oferecido nos turnos matutino e vespertino com 40 vagas e duração de 5 anos.
-Ciências Contábeis (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Direito (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 5 anos.
-Enfermagem (Bacharelado): Oferecido nos turnos matutino e vespertino com 30 vagas e duração de 5 anos.
-Farmácia (Bacharelado): Oferecido nos turnos matutino e vespertino com 40 vagas e duração de 5 anos.
-Sistemas de Informação (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Paranaguá:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno matutino com 40 vagas e duração de 3 anos.
-Gestão Ambiental (Tecnologia): Oferecido no turno matutino com 40 vagas e duração de 2,5 anos.
-Paranavaí:
-Engenharia Elétrica (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 5 anos.
-Engenharia de Software (Bacharelado): Oferecido em regime integral com 40 vagas e duração de 4 anos.
-Pinhais:
-Administração (Bacharelado): Oferecido no turno noturno com 40 vagas e duração de 4 anos.
-Ciência da Computação (Bacharelado): Oferecido nos turnos vespertino e noturno com 35 vagas e duração de 4 anos.
-Gestão da Tecnologia da Informação (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Pitanga:
-Agroindústria (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Telêmaco Borba:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Automação Industrial (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Engenharia Elétrica (Bacharelado): Oferecido em regime integral com 40 vagas e duração de 5 anos.
-Manutenção Industrial (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Umuarama:
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Arquitetura e Urbanismo (Bacharelado): Oferecido nos turnos vespertino e noturno com 40 vagas e duração de 5 anos.
-Gestão do Agronegócio (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-União da Vitória:
-Agronomia (Bacharelado): Oferecido nos turnos matutino e vespertino com 40 vagas e duração de 5 anos.
-Análise e Desenvolvimento de Sistemas (Tecnologia): Oferecido no turno noturno com 40 vagas e duração de 3 anos.
-Observações:
-¹ - O curso de Engenharia de Controle e Automação em Jacarezinho tem algumas vagas no turno noturno.
-² - Os cursos de Agronomia, Enfermagem e Farmácia em Palmas, Ciência da Computação em Pinhais e Arquitetura e Urbanismo e Agronomia em União da Vitória possuem turmas nos turnos matutino e vespertino.
+Oferta de Cursos de Bacharelado e Tecnologia
+CAMPUS | CURSO | NÍVEL | TURNO | VAGAS | DURAÇÃO
+------- | -------- | -------- | -------- | -------- | --------
+Assis Chateaubriand | Gestão Comercial | Tecnologia | Noturno | 40 | 2 anos
+Barracão | Tecnologia em Gestão Ambiental | Tecnologia | Noturno | 40 | 3 anos
+Campo Largo | Processos Gerenciais | Tecnologia | Noturno | 40 | 2,5 anos
+Campo Largo | Materiais | Tecnologia | Noturno | 40 | 3 anos
+Campo Largo | Engenharia Elétrica | Bacharelado | Noturno | 40 | 5 anos
+Campo Largo | Agroecologia | Tecnologia | Matutino | 40 | 3 anos
+Cascavel | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Cascavel | Tecnologia em Gestão Ambiental | Tecnologia | Noturno | 40 | 2 anos
+Colombo | Alimentos | Tecnologia | Noturno | 40 | 3 anos
+Colombo | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Colombo | Processos Gerenciais | Tecnologia | Noturno | 40 | 2,5 anos
+Coronel Vivida | Gestão Financeira | Tecnologia | Noturno | 40 | 2,5 anos
+Curitiba | Gestão Pública | Tecnologia | Noturno | 40 | 2,5 anos
+Curitiba | Massoterapia | Tecnologia | Matutino | 35 | 3 anos
+Curitiba | Processos Gerenciais | Tecnologia | Noturno | 40 | 2 anos
+Curitiba | Processos Escolares | Tecnologia | Vespertino | 40 | 3 anos
+Curitiba | Secretariado | Tecnologia | Noturno | 40 | 2 anos
+Curitiba | Ciências Contábeis | Bacharelado | Noturno | 40 | 4 anos
+Foz do Iguaçu | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Foz do Iguaçu | Engenharia de Aquicultura | Bacharelado | Noturno | 36 | 5 anos
+Foz do Iguaçu | Gastronomia | Tecnologia | Matutino | 40 | 2 anos
+Irati | Agronomia | Bacharelado | Vespertino | 40 | 5 anos
+Irati | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Ivaíporã | Engenharia Agronômica | Bacharelado | Integral | 40 | 5 anos
+Ivaíporã | Sistemas de Informação | Bacharelado | Noturno | 40 | 4 anos
+Jacarezinho | Engenharia de Controle e Automação | Bacharelado | Noturno | 40 | 5 anos
+Jacarezinho | Sistemas para a Internet | Tecnologia | Noturno | 40 | 3 anos
+Jaguariaíva | Gestão de Qualidade | Tecnologia | Noturno | 40 | 3 anos
+Londrina | Análise e Desenvolvimento de Sistemas | Tecnologia | Matutino | 40 | 3 anos
+Palmas | Administração | Bacharelado | Noturno | 40 | 4 anos
+Palmas | Agronomia | Bacharelado | Matutino e Vespertino | 40 | 5 anos
+Palmas | Ciências Contábeis | Bacharelado | Noturno | 40 | 4 anos
+Palmas | Direito | Bacharelado | Noturno | 40 | 5 anos
+Palmas | Enfermagem | Bacharelado | Matutino e Vespertino | 30 | 5 anos
+Palmas | Farmácia | Bacharelado | Matutino e Vespertino | 40 | 5 anos
+Palmas | Sistemas de Informação | Bacharelado | Noturno | 40 | 4 anos
+Paranaguá | Análise e Desenvolvimento de Sistemas | Tecnologia | Matutino | 40 | 3 anos
+Paranaguá | Gestão Ambiental | Tecnologia | Matutino | 40 | 2,5 anos
+Paranavaí | Engenharia Elétrica | Bacharelado | Noturno | 40 | 5 anos
+Paranavaí | Engenharia de Software | Bacharelado | Integral | 40 | 4 anos
+Pinhais | Administração | Bacharelado | Noturno | 40 | 4 anos
+Pinhais | Ciência da Computação | Bacharelado | Vespertino e Noturno | 35 | 4 anos
+Pinhais | Gestão da Tecnologia da Informação | Tecnologia | Noturno | 40 | 3 anos
+Pitanga | Agroindústria | Tecnologia | Noturno | 40 | 3 anos
+Telêmaco Borba | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Telêmaco Borba | Automação Industrial | Tecnologia | Noturno | 40 | 3 anos
+Telêmaco Borba | Engenharia Elétrica | Bacharelado | Integral | 40 | 5 anos
+Telêmaco Borba | Manutenção Industrial | Tecnologia | Noturno | 40 | 3 anos
+Umuarama | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+Umuarama | Arquitetura e Urbanismo | Bacharelado | Vespertino e Noturno | 40 | 5 anos
+Umuarama | Gestão do Agronegócio | Tecnologia | Noturno | 40 | 3 anos
+União da Vitória | Agronomia | Bacharelado | Matutino e Vespertino | 40 | 5 anos
+União da Vitória | Análise e Desenvolvimento de Sistemas | Tecnologia | Noturno | 40 | 3 anos
+
 As informações acima podem estar sujeitas a alterações. Para informações mais detalhadas, consulte o site da instituição.
 
 
@@ -4714,9 +4147,7 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
 
 `;
 
-            var promptInicialDevBot = "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas. Só responda sobre os cursos constantes nos Editais 87, 88, 89 e 90 do IFPR, cuidado para não se enganar e informar curso que não existe nos Campus/ Cidade.";
-
-            var TodosOsEditais = edital1 + edital2 + edital4 + edital3 ; // + edital3 ;
+            var TodosOsEditais = edital87 + edital88 + edital89 + edital90 ; // + edital3 ;
 
             try {
                 // Adiciona os editais ao histórico da IA, mas não à exibição do usuário
@@ -4725,7 +4156,7 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
                 if (history.length === 0) {
                     history.push({
                         role: 'user',
-                        parts: [{ text: "Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. As suas respostas e interações precisam ser descontraidas e divertidas." }],
+                        parts: [{ text: instrucoesIniciais }],
                     });
                     // history.push({
                     //     role: 'user',
@@ -4748,7 +4179,7 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
 
                     history.push({
                         role: 'user',
-                        parts: [{ text: (promptInicialDevBot + TodosOsEditais + promptInicialDevBot) }],
+                        parts: [{ text: (TodosOsEditais) }],
                     });
 
 
