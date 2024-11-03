@@ -4305,7 +4305,9 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
         // Função para registrar o histórico da conversa
         const registrarHistorico = async (usuario, mensagem) => {
             try {
-                const response = await axios.post('http://chatbot-sabia-ifpr-f232b4.netlify.app/historico', {
+			
+				const urlEndPoints = "https://backend-endpoints-l6q8.onrender.com";
+                const response = await axios.post(urlEndPoints+'/historico', {
                     usuario,
                     mensagem
                 });
@@ -4322,7 +4324,8 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
         // Função para registrar o acesso ao Chatbot
         const registrarAcesso = async (usuario) => {
             try {
-                const response = await axios.post('http://chatbot-sabia-ifpr-f232b4.netlify.app/login', {
+				const urlEndPoints = "https://backend-endpoints-l6q8.onrender.com";
+                const response = await axios.post(urlEndPoints+'/login', {
                     usuario,
                 });
 
