@@ -1,3 +1,7 @@
+O sabia está publicado em dois serviços de Nuvem:
+Netlify - https://chatbot-sabia-ifpr-f232b4.netlify.app/
+Vercel - https://sabia-faq-ifpr-assis.vercel.app
+
 <chat style="text-align:center">## ChatBot Sabiá - IFPR Campus Assis Chateaubriand 🐦</chat>
 
 <img style="text-align:center" src="src/assets/banner-geral-1536x864.png" alt="ChatBot Sabiá em ação" width="500">
