@@ -1,4 +1,4 @@
-O sabia está publicado em dois serviços de Nuvem:
+O sabiá está publicado em dois serviços de Nuvem:
 Netlify - https://chatbot-sabia-ifpr-f232b4.netlify.app/
 Vercel - https://sabia-faq-ifpr-assis.vercel.app
 
