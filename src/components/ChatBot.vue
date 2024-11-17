@@ -66,7 +66,7 @@ export default {
         ]);
         //const messages = ref([]); // Inicie o array vazio
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
-        const API_KEY = "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
+        const API_KEY = "AIzaSyB14MyBOZWdEn61yWBuAgLHJQBi3VbRCS8"; // "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
 		var promptInicialDevBot = `Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. 
 								Regras:
