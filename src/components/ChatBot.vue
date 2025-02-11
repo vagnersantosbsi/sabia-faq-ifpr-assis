@@ -114,7 +114,7 @@ export default {
 								.
 
 								`;
-		var instrucoesGeraisPS2025 = "";
+		instrucoesGeraisPS2025 = "";
 		var instrucoesIniciais = promptInicialDevBot + instrucoesGeraisPS2025 + ideiaDoChatBot; 
         const model = genAI.getGenerativeModel({model: 'gemini-1.5-flash',
 			system_instruction: instrucoesIniciais }); // Substitua pelo modelo desejado
@@ -4773,8 +4773,8 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
 
 `;
 
-            //var TodosOsEditais = edital87 + edital88 + edital89 + edital90 ; // + edital3 ;
-			var TodosOsEditais = edital6_2025;
+            var TodosOsEditais = edital87 + edital88 + edital89 + edital90 ; // + edital3 ;
+			TodosOsEditais = edital6_2025;
 
             try {
                 // Adiciona os editais ao histórico da IA, mas não à exibição do usuário
@@ -5002,7 +5002,7 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
     left: 0;
     width: 100%;
     height: 100%;
-	    /* background-image: url('../assets/banner-geral-1536x864.png'); */
+	/* background-image: url('../assets/banner-geral-1536x864.png'); */
     background-image: url('../assets/assistencia-estudantil.png');
     background-size: cover;
     background-position: center;
