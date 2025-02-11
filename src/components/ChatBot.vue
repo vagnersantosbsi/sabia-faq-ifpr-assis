@@ -68,19 +68,18 @@ export default {
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
         const API_KEY = "AIzaSyB14MyBOZWdEn61yWBuAgLHJQBi3VbRCS8"; // "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
-		var promptInicialDevBot = `Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Processo seletivo do IFPR para alunos interessandos em Ingressar em 2025, seus usuários tem interesse nas vagas do Campus em Assis Chateaubriand. 
+		var promptInicialDevBot = `Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Programa de Assistência Complementar ao Estudande do IFPR , seus usuários tem interesse nas informações e querem se inscrever no programa. 
 								Regras:
 									1) As suas respostas e interações precisam ser descontraidas e divertidas;
-									2) Só responda sobre os cursos constantes nos Editais 87, 88, 89 e 90 do IFPR para o processo seletivo 2025;
-									3) Cuidado para não se enganar e informar curso que não existe nos Campus/ Cidade.
-									4) A maioria dos usuários será de Assis Chateaubriand, portanto não erre as informações. 
-									5) Existe a possibilidade de pessoas de outras cidades buscarem informações contigo.
+									2) Só responda sobre as informações constantes no Editais 6 de 11/02/2025 do IFPR para o programa citado;
+									3) Cuidado para não se enganar e informar curso que não existe.
+									4) Os usuários serão alunos regularmente matriculados no IFPR, portanto não erre as informações. 
+									5) Existe a possibilidade de pessoas de várias Campus diferente  buscarem informações contigo.
 									6) As respostas devem sempre informar e relacionar o respectivo edital. 
-									7) As respostas sobre os cursos do edital 87 deverão sempre retornar o nome do curso Médio/ Técnico em [...]. 
-									8) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link.
-									9) Quando o usuário do Chatbot falar sobre técnico integrado ou médio integrado, o usuário se refere ao Curso de nível médio integrado ao técnico
+									7) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link.
+									
 									`;
-		var ideiaDoChatBot = "Gemini, segue a ideia deste Chatbot, mensagem: Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar no Processo Seletivo do IFPR Campus Assis Chateaubriand! O que te traz por aqui? 😉";
+		var ideiaDoChatBot = "Gemini, segue a ideia deste Chatbot, mensagem: Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar nas informações que tenha interesse no IFPR! O que te traz por aqui? 😉";
 		var instrucoesGeraisPS2025 = `Instruções gerais para o processo seletivo 2025
 								Inscrição
 								A inscrição deve ser realizada através do Portal do Candidato, onde o candidato deverá realizar o login através de sua conta pessoal no Portal gov.br e seguir os passos dispostos no edital correspondente ao tipo de curso desejado.
@@ -115,6 +114,7 @@ export default {
 								.
 
 								`;
+		var instrucoesGeraisPS2025 = "";
 		var instrucoesIniciais = promptInicialDevBot + instrucoesGeraisPS2025 + ideiaDoChatBot; 
         const model = genAI.getGenerativeModel({model: 'gemini-1.5-flash',
 			system_instruction: instrucoesIniciais }); // Substitua pelo modelo desejado
@@ -129,6 +129,587 @@ export default {
 
         const sendMessage = async () => {
             if (userInput.value.trim() === '') return;
+
+			var edital6_2025 = `Edital N°6, de 11 de fevereiro de 2025
+
+ 
+
+
+O DIRETOR SISTÊMICO DE ASSUNTOS ESTUDANTIS DO INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO PARANÁ, no uso da competência que lhe confere a Portaria nº 543, de 06 de março de 2024, publicada no Diário Oficial da União em 07 de março de 2024, seção 2, página 19, resolve tornar pública a inscrição para fins de concessão de benefício direto ao estudante e dá providências administrativas e financeiras no âmbito do PROGRAMA DE ASSISTÊNCIA COMPLEMENTAR AO ESTUDANTE PACE 2025, visando contribuir com o custeio parcial pelo discente das despesas essenciais à sua permanência e êxito acadêmico.
+
+ 
+
+ 
+
+1. DA BASE LEGAL
+
+1.1. Lei n° 14.914, de 3 de julho de 2024, que institui a Política Nacional de Assistência Estudantil (PNAES);
+
+1.2. Lei nº 12.711, de 29 de agosto de 2012, que dispõe sobre o ingresso nas universidades federais e nas instituições federais de ensino técnico de nível médio e dá outras providências;
+
+1.3. Lei n.° 13.709, de 14 de agosto de 2018, que dispões sobre a Lei Geral de Proteção de Dados Pessoais (LGPD);
+
+1.4. Decreto nº 7.234, de 19 de julho de 2010, que dispõe sobre o Programa Nacional de Assistência Estudantil - PNAES;
+
+1.5. Resolução IFPR nº 11, de 21 de dezembro de 2009, que aprova a Política de Apoio Estudantil do Instituto Federal do Paraná;
+
+1.6. Resolução IFPR nº 66, de 13 de dezembro de 2018, aprovada pelo Conselho Superior, a qual institui o Índice de Vulnerabilidade Socioeconômica - IVS, no Instituto Federal do Paraná.
+
+ 
+
+2. DO OBJETO
+
+O presente Edital destina-se a selecionar estudantes matriculados nos cursos técnicos de nível médio (integrado, concomitante e subsequente), graduação (licenciatura, bacharelado e tecnólogo) e Cursos de Educação de Jovens e Adultos articulada à Educação Profissional e Tecnológica - EJA/EPT do IFPR, na modalidade PRESENCIAL, em situação de vulnerabilidade socioeconômica, visando para concessão de benefício direto ao estudante para fins de custear parcialmente despesas como: alimentação, moradia, transporte e aquisição de material didático.
+
+ 
+
+3. DOS REQUISITOS
+
+3.1 Possuir matrícula ativa junto ao IFPR, em um dos seguintes níveis do ensino presencial:
+
+3.1.1 Cursos Técnicos de nível médio (concomitante, integrado e subsequente);
+
+3.1.2 Cursos de Graduação (licenciatura, bacharelado e tecnólogo).
+
+3.1.3 Cursos de Educação de Jovens e Adultos articulada à Educação Profissional e Tecnológica - EJA/EPT.
+
+3.2 Prioritariamente estar matriculado/a em pelo menos dois componentes curriculares no ano/semestre, na etapa de concessão.
+
+3.3. Atender e comprovar pelo menos uma das seguintes situações:
+
+ser integrante de grupo familiar em situação de vulnerabilidade socioeconômica, observado o limite de renda bruta familiar mensal per capita de até 1 (um) salário mínimo;
+
+ser egresso da rede pública de educação básica;
+
+ser egresso da rede privada na condição de bolsista integral na educação básica;
+
+estar matriculado nas vagas reservadas aos autodeclarados pretos, pardos, indígenas e quilombolas e por pessoas com deficiência, conforme Lei nº 12.711, de 29 de agosto de 2012;
+
+ser estudante com deficiência a qual requeira acompanhamento pedagógico necessário à sua permanência no IFPR, independentemente de sua origem escolar ou renda;
+
+ser estudante oriundo de entidade ou de abrigo de acolhimento institucional não adotado em idade de saída;
+
+ser estudante quilombola, indígena ou de comunidades tradicionais;
+
+ser estudante estrangeiro em situação de vulnerabilidade socioeconômica ou refugiado.
+
+3.4 Comprovar requisitos de elegibilidade e situação de vulnerabilidade socioeconômica, através de documentação pertinente – vide Anexos I e II deste Edital.
+
+3.5 Proceder à autorização e ciência de sua inscrição, em conformidade à Lei Geral de Proteção de Dados Pessoais - LGPD, ao logar no SiGAE.
+
+3.5.1 Na hipótese de não haver a autorização, a inscrição não poderá ser realizada.
+
+3.5.2 A qualquer tempo a autorização poderá ser alterada pelo discente.
+
+3.6 Não ter pendência de pagamento de Guia de Recolhimento da União – GRU, referente aos Programas da Assistência Estudantil até a publicação do resultado final deste Edital, referente aos exercícios atual ou anterior.
+
+ 
+
+4. DA INSCRIÇÃO
+
+4.1 As inscrições serão recebidas das 08h do dia 17 de fevereiro às 12h00 de 04 de abril de 2025, pelo horário de Brasília, exclusivamente pelo Formulário Eletrônico de Inscrição, no Sistema de Gerenciamento da Assistência Estudantil - SiGAE do Instituto Federal do Paraná, disponível em https://sigae.ifpr.edu.br a partir da data de início das inscrições.
+
+4.1.1 Somente serão consideradas as inscrições finalizadas até às 12h de 04 de abril de 2025.
+
+4.2 Os documentos - vide Anexos I e II, deverão ser, obrigatoriamente, anexados ao Formulário Eletrônico - SiGAE, no decorrer da inscrição, nos formatos .pdf ou .jpg com tamanho máximo de 10mb.
+
+4.2.1 O Tutorial contendo o passo a passo para a inscrição e submissão de documentos no SIGAE encontra-se disponível em: https://ifpr.edu.br/menu-academico/assistencia-estudantil/tutoriais-assistencia-estudantil/assistencia-estudantil-tutoriais/
+
+4.2.2 Os discentes com Índice de Vulnerabilidade Socioeconômica válido, por meio do SIGAE, ficam dispensados de apresentar os documentos dos Anexos I e II, uma vez que já possuem suas análises socioeconômicas realizadas e o Tutorial contendo o passo a passo para a inscrição no SiGAE encontra-se disponível no item 7 em: https://ifpr.edu.br/menu-academico/assistencia-estudantil/tutoriais-assistencia-estudantil/assistencia-estudantil-tutoriais/
+
+4.3 Os discentes que não possuem acesso à internet poderão dirigir-se ao laboratório de informática do seu campus, no período especificado no item 4.1, e havendo quaisquer dúvidas deverão procurar a Seção Pedagógica e de Assuntos Estudantis – SEPAE ou setor responsável.
+
+4.4 Em caso de necessidade de suporte técnico referente ao funcionamento do SiGAE, o servidor responsável no campus deverá abrir chamado exclusivamente por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), selecionando tipo de sistema "SIGAE", bem como realizar o acompanhamento e o retorno com a solução ao candidato.
+
+4.4.1 Serão analisados os chamados abertos pelo servidor responsável até às 10h horas do dia 04 de abril de 2025.
+
+4.4.2 O suporte técnico por parte da DGTI e DAES, em relação ao SiGAE, será fornecido durante o período de inscrição, no horário das 08h do dia 17 de fevereiro às 10h do dia 04 de abril de 2025, somente nos dias úteis e em horário de expediente das 08h às 17h, exclusivamente por chamado da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br).
+
+ 
+
+5. DOS INSCRITOS
+
+5.1 A DAES publicará no Sistema Eletrônico de Informações - SEI, disponível em SEI - Publicações Eletrônicas (ifpr.edu.br), a relação preliminar das inscrições recebidas, até 04 de abril de 2025.
+
+5.1.1 A DAES disponibilizará o Edital na página da Assistência Estudantil, disponível em Editais – Instituto Federal do Paraná (ifpr.edu.br), até 04 de abril de 2025.
+
+5.2 O discente terá das 08h de 07 de abril às 12h de 08 de abril de 2025, para formalizar pedido recursal em caso de inscrição não recebida, junto ao campus.
+
+5.3 O campus deverá abrir chamado, exclusivamente por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), selecionando tipo de sistema "SIGAE", acompanhar a evolução da solicitação e informar ao candidato.
+
+5.3.1 No chamado deverão ser informados obrigatoriamente os dados do discente, tais: nome completo, CPF, e-mail e número do protocolo gerado pelo SiGAE.
+
+5.4 A DAES publicará no Sistema Eletrônico de Informações - SEI, disponível em SEI - Publicações Eletrônicas (ifpr.edu.br) o edital de homologação dos inscritos até 09 de abril de 2025.
+
+5.4.1 A DAES disponibilizará o Edital na página da Assistência Estudantil, disponível em Editais – Instituto Federal do Paraná (ifpr.edu.br), até 09 de abril de 2025.
+
+5.5 Não caberá recurso ao discente que não cumprir as etapas e prazos previstos neste edital.
+
+5.6 É de responsabilidade do discente a ciência a respeito da situação de sua inscrição.
+
+5.7 O campus disponibilizará em sua página institucional e em local visível e de fácil acesso a lista de inscritos para ciência e conhecimento dos candidatos.
+
+ 
+
+6. DA ANÁLISE SOCIOECONÔMICA
+
+6.1 O período de análise será das 08h do dia 09 de abril até às 12h do dia 05 de maio de 2025.
+
+6.2 Serão classificados os discentes conforme Índice de Vulnerabilidade Social.
+
+6.3 A avaliação e parecer socioeconômico serão realizados exclusivamente pelos servidores ocupantes do cargo de Assistente Social, lotados na Reitoria, e nos campi, conforme Quadro de Distribuição de Análises, que será disponibilizado pela Diretoria de Assuntos Estudantis, na página da Assistência Estudantil.
+
+ 
+
+7. DA ADMISSÃO DE DOCUMENTAÇÃO PENDENTE
+
+7.1 A DAES extrairá as informações do Sistema de Gerenciamento da Assistência Estudantil - SiGAE e publicará no Sistema Eletrônico de Informações - SEI, disponível em SEI - Publicações Eletrônicas (ifpr.edu.br), edital contendo a relação de discentes com documentação pendente, até 05 de maio de 2025.
+
+7.1.1 A DAES disponibilizará o Edital na página da Assistência Estudantil, disponível em Editais – Instituto Federal do Paraná (ifpr.edu.br), até 05 de maio de 2025.
+
+7.2 Os discentes terão o período do dia 06 de maio até às 17h do dia 08 de maio de 2025, para submeter a documentação pendente, a partir de seu acesso ao Sistema de Gerenciamento da Assistência Estudantil - SiGAE.
+
+7.2.1 O Tutorial contendo o passo a passo para a submissão de documentação pendente no SIGAE encontra-se disponível em: https://ifpr.edu.br/menu-academico/assistencia-estudantil/tutoriais-assistencia-estudantil/assistencia-estudantil-tutoriais/
+
+7.2.2 Não serão admitidas alterações informadas no cadastro de inscrição.
+
+7.3 Os discentes que não possuem acesso à internet poderão dirigir-se ao laboratório de informática do seu campus, no período especificado no item 7.2, e havendo quaisquer dúvidas deverão procurar a Seção Pedagógica e de Assuntos Estudantis – SEPAE ou setor responsável.
+
+7.4 Em caso de necessidade de suporte técnico referente ao funcionamento do SIGAE, o servidor responsável no campus deverá abrir chamado exclusivamente por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), selecionando tipo de sistema "SIGAE", bem como realizar o acompanhamento e o retorno com a solução ao candidato.
+
+7.4.1 Serão analisados os chamados abertos pelo servidor responsável até às 15h do dia 08 de maio de 2025.
+
+7.5 O suporte técnico por parte da DGTI e DAES, em relação ao SiGAE, será fornecido durante o período de submissão de documentos pendentes, somente nos dias úteis e em horário de expediente das 08h às 17h, exclusivamente pelo chamado da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br).
+
+7.6 Em nenhuma hipótese será admitida documentação recebida fora do sistema e do prazo estipulado.
+
+ 
+
+8. DA ANÁLISE SOCIOECONÔMICA - PÓS ADMISSÃO DE DOCUMENTAÇÃO PENDENTE
+
+8.1 O período de análise será das 08h do dia 09 de maio de 2025 até às 12h do dia 23 de maio de 2025.
+
+8.2 A avaliação e parecer socioeconômico serão realizados exclusivamente pelos servidores ocupantes do cargo de Assistente Social, lotados na Reitoria, e nos campi, conforme Quadro de Distribuição de Análises, que será disponibilizado pela Diretoria de Assuntos Estudantis, na página da Assistência Estudantil.
+
+ 
+
+9. DO RESULTADO PRELIMINAR
+
+9.1 A DAES extrairá os dados diretamente do Sistema de Gerenciamento da Assistência Estudantil – SiGAE e publicará no Sistema Eletrônico de Informações - SEI, disponível em SEI - Publicações Eletrônicas (ifpr.edu.br) até o dia 23 de maio de 2025.
+
+9.1.1 A DAES disponibilizará o Edital na página da Assistência Estudantil, disponível em Editais – Instituto Federal do Paraná (ifpr.edu.br), até 23 de maio de 2025.
+
+9.2 Os discentes poderão ter suas solicitações deferidas ou indeferidas.
+
+ 
+
+10. DA INTERPOSIÇÃO DE RECURSOS
+
+10.1 Os discentes terão das 08h do dia 26 de maio até às 17h do dia 27 de maio de 2025 para interpor recurso diretamente no Sistema de Gerenciamento da Assistência Estudantil – SiGAE.
+
+10.1.1 O Tutorial contendo o passo a passo para a interposição de recurso no SIGAE encontra-se disponível em: https://reitoria.ifpr.edu.br/menu-academico/assistencia-estudante/assistencia-estudantil-tutoriais/
+
+10.2 Os discentes que não possuem acesso à internet poderão dirigir-se ao laboratório de informática do seu campus, no período especificado no item 10.1, e havendo quaisquer dúvidas deverão procurar a Seção Pedagógica e de Assuntos Estudantis – SEPAE ou setor responsável.
+
+10.3 Em caso de necessidade de suporte técnico referente ao funcionamento do SIGAE, o servidor responsável no campus deverá abrir chamado exclusivamente por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), selecionando tipo de sistema "SIGAE", bem como realizar o acompanhamento e o retorno com a solução ao candidato.
+
+10.3.1 Serão analisados os chamados abertos pelo servidor responsável até às 15h do dia 27 de maio de 2025.
+
+10.4 O suporte técnico por parte da DGTIC e DAES, em relação ao SiGAE, será fornecido durante o período de interposição de recursos, no horário das 08h às 17h, somente nos dias úteis, exclusivamente por chamado de Central de Serviços - SUAP.
+
+10.5 Os pedidos de recursos serão analisados no período das 14h de 27 de maio até às 17h do dia 29 de maio de 2025, conforme Quadro de Distribuição de Análises, que será disponibilizado pela Diretoria de Assuntos Estudantis, na página da Assistência Estudantil.
+
+10.6 Não caberá recurso ao discente que não cumprir as etapas e prazos previstos neste edital.
+
+ 
+
+11. DA CONCESSÃO E RESULTADO FINAL
+
+11.1 A concessão será realizada diretamente no Sistema de Gerenciamento da Assistência Estudantil - SiGAE, das 08h até às 17h do dia 02 de junho de 2025.
+
+11.2 A DAES extrairá os dados diretamente do Sistema de Gerenciamento da Assistência Estudantil – SiGAE, e publicará no Sistema Eletrônico de Informações - SEI, disponível em SEI - Publicações Eletrônicas (ifpr.edu.br) até 03 de junho de 2025 o Resultado Final.
+
+11.3 A DAES disponibilizará o Edital na página da Assistência Estudantil, disponível em Editais – Instituto Federal do Paraná (ifpr.edu.br), até 03 de junho de 2025.
+
+11.4 Os discentes serão classificados conforme o Índice de Vulnerabilidade Socioeconômica - IVS apurado na análise documental.
+
+11.5 Havendo empate entre dois ou mais candidatos/as que vierem a ocupar idêntica classificação, adotar-se-á como critério de desempate, sucessivamente: a menor renda familiar per capita, origem escolar e a lei 12.711/2012, nesta ordem.
+
+11.6 Os discentes que atenderem os requisitos deste edital terão suas solicitações deferidas ou inseridos em lista de espera, conforme número de vagas por campi.
+
+11.7 Os discentes cujas solicitações foram deferidas ou em lista de espera, terão o Índice de Vulnerabilidade Socioeconômico válido por 24 (vinte e quatro) meses, excetuando-se aqueles com o índice apurado em exercícios anteriores.
+
+11.8 Os discentes que não atenderem os requisitos deste edital terão suas solicitações indeferidos.
+
+11.9 Sobre a classificação final não caberá recurso.
+
+ 
+
+12. DO NÚMERO DE AUXÍLIOS, DISCENTES ATENDIDOS E DOS RECURSOS FINANCEIROS
+
+12.1 Serão ofertados até 30.900 (trinta mil e novecentos) auxílios, referentes a este edital, para o exercício 2025.
+
+12.2 Serão atendidos até 5.150 (cinco mil, cento e cinquenta) discentes por mês, considerando o prazo de vigência estabelecido no item 13.
+
+12.3 O valor do auxílio fica fixado em: R$ 200,00 (duzentos reais) para IVS entre 0,1 e 2,0; e R$ 360,00 (trezentos e sessenta reais) para IVS acima de 2,0. Os valores são mensais, podendo ser reajustados, para mais ou menos, mediante disponibilidade orçamentária, sem quaisquer prejuízos à administração.
+
+12.4 O valor total previsto para este programa é de até de R$ 7.188.000,00 (sete milhões, cento e oitenta e oito mil reais), à conta da Ação 2994 - Assistência ao Educando da Rede Profissional e Tecnológica, conforme Quadro abaixo:
+
+ 
+
+Valores
+
+faixa IVS
+
+n.° de bolsas
+
+n.° de parcelas
+
+Valor da bolsa
+
+Recurso TOTAL
+
+Valor 1
+
+0,1 |- 2,0
+
+4100
+
+6
+
+R$ 200,00
+
+R$ 4.920.000,00
+
+Valor 2
+
+2,0 |- 10
+
+1050
+
+6
+
+R$ 360,00
+
+R$ 2.268.000,00
+
+ 
+
+TOTAL
+
+R$ 7.188.000,00
+
+ 
+
+12.5 O número de auxílios concedidos por campus será: 50% proporcional ao quantitativo de discentes cadastrados no Portal INFO/PROPLAN/IFPR ano-base 2024, uma vez que o recurso para 2025 tem como base as extrações desse exercício; e, 50% considerando, o percentual de discentes dentro do perfil socioeconômico das análises pertinentes a este edital.
+
+12.6 O quantitativo de auxílios destinado a cada campus será publicado até 23 de maio de 2025.
+
+12.7 O valor total do auxílio devido ao discente deverá ser creditado mensalmente à conta corrente do discente, a partir da autorização do ordenador de despesas da unidade.
+
+12.7.1 Por ocasião da saída e entrada de bolsistas durante o interstício do Programa, fica assegurado o pagamento proporcional ao discente desligado e ao discente ingressante.
+
+12.7.2 Nos casos de desligamento por transferência externa, trancamento de matrícula, desistência ou falecimento, o discente não fará jus ao pagamento proporcional.
+
+12.7.3 Em virtude de pagamento proporcional, tomar-se-á por base 30 (trinta) dias corridos, não devendo ser contabilizado o dia 31, considerando o valor total do auxílio recebido pelo discente.
+
+12.7.4 A soma dos pagamentos proporcionais de bolsista desligado e ingressante a partir da lista de espera, deve ser igual ao valor do auxílio integral, de forma a não comprometer o saldo orçamentário inicialmente destinado.
+
+12.8 Para fins administrativos e financeiros, o interstício de registro de frequência dos bolsistas deve apurar a permanência entre o período do dia 16 ao dia 15 do mês subsequente. Excepcionalmente para pagamento da competência de junho deverá ser aferida a frequência do bolsista correspondente ao interstício do dia 03/06/2025 a 15/06/2025, garantido o valor integral do auxílio total devido ao discente.
+
+12.8.1 Discentes que não estiverem em aula dentro do período de interstício, exceto período de férias referente ao mesmo período/ano letivo, o responsável deve aferir no SiGAE como Frequência Suspensa - FS.
+
+12.9 O valor do auxílio, concedido pela DAES, somente será creditado aos discentes efetivos em seus programas e não possuem natureza indenizatória, isto é, não será, sob nenhuma hipótese, o pagamento processado a terceiros em decorrência de quaisquer situações.
+
+ 
+
+13. DO PRAZO DE VIGÊNCIA
+
+13.1 O Programa terá vigência de 01 de junho a 30 de novembro de 2025, totalizando prazo de 06 (seis) meses.
+
+13.2 Ao final do Programa, ficam automaticamente desligados todos os bolsistas.
+
+ 
+
+14. DO INGRESSO, ACOMPANHAMENTO DE FREQUÊNCIA E PERMANÊNCIA DO BOLSISTA NO PROGRAMA
+
+14.1 Rotinas Administrativas - à unidade a ser delegada pela Direção Geral do campus
+
+14.1.1 Abrir processo no Sistema Eletrônico de Informações, do tipo: Assistência estudantil: Concessão de bolsas - inclusão sócio-educacional e digital (Edital), para registros dos assentamentos da vida acadêmica do discente durante a vinculação com este Programa (tais como: e-mail de solicitação de edital de desligamento / Termos Circunstanciados Avaliados/ Memorando de solicitação de pagamento e relacionar o mesmo ao processo administrativo deste Programa: 23411.000400/2025-45.
+
+14.1.2 Acompanhar a publicação de editais de resultado e/ou chamada de lista de espera para fins de emitir o Termo de Compromisso - TC, por meio do Sistema de Gerenciamento da Assistência Estudantil - SiGAE, em até um dia após a publicação do edital.
+
+14.1.3 Encaminhar o TC gerado pelo SiGAE ao discente por meio físico ou digital.
+
+14.1.4 Receber o TC assinado pelo discente, e proceder ao upload no SiGAE para realizar baixa.
+
+14.1.4.1 Somente após a entrega do TC, o sistema efetuará a liberação do bolsista para a etapa de registro de frequência.
+
+14.1.5 Consultar, mensalmente, no SiGAE o registro de frequência do bolsista.
+
+14.1.6 Notificar, preferencialmente por e-mail, ao bolsista com a frequência inferior a 75% (setenta e cinco) por cento.
+
+14.1.7 Elaborar o Termo Circunstanciado Avaliado - TCA para fins de autorizar ou não o pagamento de ¾ (três quartos) do valor do auxílio, nos casos de frequência nos limites de 51% (cinquenta e um) por cento a 74% (setenta e quatro) por cento.
+
+14.1.8 O TCA poderá ser elaborado uma única vez para cada bolsista, quando da primeira ocorrência de frequência inferior ao mínimo exigido e deverá conter a ciência da Direção Geral ou Seção Pedagógica e de Assuntos Estudantis.
+
+14.1.8.1 O TCA deverá ser acostado ao processo administrativo aberto pela SEPAE.
+
+14.1.8.2 O pagamento proporcional é devido apenas na primeira ocorrência de frequência inferior à mínima exigida.
+
+14.1.9 Proceder ao acompanhamento pedagógico dos bolsistas, em vistas a reduzir os índices de evasão escolar e contribuir para o desempenho e êxito acadêmico.
+
+14.1.10 Abrir e proceder aos encaminhamentos no processo administrativo, quanto ao pagamento dos bolsistas contemplados.
+
+14.1.11 Informar à DAES , via e-mail SEI, a partir o processo administrativo do campus, para daes@ifpr.edu.br, o desligamento do bolsista, a partir dos motivos expostos no item 16, explicitando a data e o motivo do desligamento para fins de emissão e publicação de Edital.
+
+14.1.12 Acompanhar a publicação do edital de desligamento para fins de emitir o Termo de Desligamento - TD do bolsista no Sistema de Gerenciamento da Assistência Estudantil - SiGAE.
+
+14.1.13 Emitir o TD gerado pelo SiGAE ao discente, para assinatura.
+
+14.1.14 Acompanhar a entrega do TD assinado.
+
+14.1.15 Aguardar o prazo de 48 (quarenta e oito) horas da publicação do edital de desligamento para receber eventuais pedidos de recursos pós-desligamento do discente, e se aplicável, enviar e-mail SEI à DAES (daes@ifpr.edu.br), solicitando a recondução do bolsista ao programa.
+
+14.1.15.1 A recondução do bolsista ao programa, por quaisquer que sejam os motivos, é devida uma única vez. Em caso de reincidência de desligamento, seja a pedido ou automático, não será possível admitir o discente ao programa.
+
+14.1.15.2 Não havendo recursos pós-desligamentos, formalizar via e-mail SEI, no processo administrativo correspondente, à DAES (daes@ifpr.edu.br), se aplicável, a solicitação de chamada de lista de espera, para fins de publicação de edital.
+
+14.1.15.3 Adotar as providências previstas nos itens 14.1.2 a 14.1.4 para bolsistas ingressantes por chamada de lista de espera.
+
+14.1.16 Acompanhar a inclusão de avaliação do Programa pelo discente, no SiGAE.
+
+14.1.17 Realizar, para toda e qualquer intercorrência em relação ao bolsista, registro de despacho e/ou Termo Circunstanciado Avaliado no processo administrativo, e quando se tratar de recursos financeiros, o mesmo deverá ser tramitado à DAES para deliberações finais, com a anuência do Diretor Geral do campus.
+
+14.1.18 Proceder, em caso de pedido de recondução de discente ao programa, justificativa no processo administrativo, e tramitar à DAES para deliberações finais.
+
+Parágrafo único: As documentações inseridas em processo administrativo, sejam: despachos, termos circunstanciados, justificativas e afins, devem, obrigatoriamente, conter a assinatura do Diretor Geral antes de sua tramitação à DAES.
+
+14.1.19 Inserir a conta corrente do bolsista no SiGAE, em até 60 (sessenta dias) a contar da data da emissão do Termo de Compromisso.
+
+14.1.19.1 Conferir e atualizar, sempre que pertinente, a conta corrente do discente no SiGAE.
+
+14.1.19.2 O bolsista que não tiver a informação de dados bancários no SiGAE, será automaticamente desligado após o prazo estipulado.
+
+14.1.20 Manter arquivadas todas as documentações físicas e/ou digitais do discente enquanto vinculado ao programa.
+
+14.2. Cabe ao discente contemplado
+
+14.2.1 Ler, assinar e devolver à SEPAE do campus o Termo de Compromisso - TC.
+
+14.2.1.1 O prazo para o bolsista enviar o TC assinado é de 10 (dez) dias corridos, a contar da data de emissão do termo.
+
+14.2.2 Possuir, obrigatória e exclusivamente, conta corrente, no Banco do Brasil, como titular (em seu nome) ou providenciar a sua abertura.
+
+14.2.2.1 O bolsista menor de 16 (dezesseis) anos deverá abrir a conta corrente, acompanhado do seu responsável legal. Nestas condições o bolsista apresentará conta corrente conjunta.
+
+14.2.2.2 O bolsista terá até 40 (quarenta) dias corridos, a partir da data de publicação do edital de resultado final e/ou chamada em lista de espera, para apresentar conta corrente, ativa e em situação regular, para inclusão da mesma no Sistema de Administração Financeira - SIAFI de modo a garantir o pagamento do auxílio.
+
+14.2.2.3 A não apresentação e/ou regularização da conta corrente dentro do prazo previsto, ensejará no desligamento automático do programa, devendo o discente assinar o Termo de Desligamento - TD, que será emitido pelo campus.
+
+Parágrafo único: É vedado o pagamento ao bolsista na modalidade de ordem de pagamento.
+
+14.2.2.4 O Termo de Desligamento deverá ser enviado ao email dos estudantes.
+
+14.2.3 Para permanência no Programa, o bolsista deve alcançar, cumulativa e mensalmente, no mínimo 75% (setenta e cinco por cento) de frequência, considerando:
+
+14.2.3.1 A carga horária total do período letivo, nos casos de cursos técnicos de nível médio ou de graduação, observado o mês de competência para pagamento.
+
+14.2.3.2 A frequência entre 51% (cinquenta e um por cento) a 74% (setenta e quatro por cento) mediante parecer elaborado pela campus poderá ser autorizada, por uma única vez, a concessão de ¾ (três quartos) do valor do auxílio, se na primeira ocorrência.
+
+14.2.3.3 A frequência igual ou inferior a 50% (cinquenta por cento) acarreta na suspensão integral do auxílio.
+
+14.2.3.4 A frequência inferior a 75% (setenta e cinco por cento), por 02 (dois) meses consecutivos ou alternados, acarretará no desligamento automático do programa, mesmo no caso em que o discente se enquadre no item 14.1.7, exceto nos casos de faltas justificadas por atestado médico, ou circunstância de força maior apurada pela unidade competente e homologada pela Direção Geral do campus, por meio de Termo Circunstanciado enviado para autorização da DAES.
+
+14.2.4 Protocolar o atestado médico junto ao campus, em até 03 (três) dias úteis após a expedição pelo médico responsável.
+
+14.2.4.1 O atestado poderá ser protocolado por terceiros, em virtude de impedimento por parte do discente.
+
+14.2.5 Responder ao campus sempre que for questionado, no que tange a ciência de frequência nos casos de percentual inferior ao mínimo exigido, e demais solicitações pertinentes.
+
+14.2.6 Responder à avaliação do programa, sobre a efetividade do programa para sua permanência, melhoria e êxito do desempenho acadêmico, quando disponibilizado no sistema.
+
+14.2.7 Assinar o Termo de Desligamento, quando da saída no interstício do programa, sempre que o desligamento seja a pedido do estudante, ou por interesse da administração, ou quando não houver a apresentação e/ou regularização da conta corrente dentro do prazo.
+
+14.2.8 Devolver, por meio de Guia de Recolhimento da União - GRU, por eventuais valores financeiros recebidos indevidamente, preferencialmente em cota única e dentro do exercício competente.
+
+14.2.8.1 Poderá ser feito o parcelamento do valor total para fins de devolução via GRU, desde que o ressarcimento total ocorra dentro do exercício 2025.
+
+14.2.8.2 A não devolução nos prazos e valores estabelecidos, fica o discente ciente do impedimento na participação em quaisquer outros Programas da Assistência Estudantil até a regularização da situação.
+
+14.2.8.3 Fica o discente ciente de que a regularização da situação após o prazo encerrado de inscrição de eventual edital não gera direito à participação.
+
+14.2.9 Prestar informações ao longo de sua permanência no programa, a pedido da administração, e a qualquer tempo, e por elas assumir inteira responsabilidade.
+
+14.2.9.1 Declarações falsas acarretarão sanções previstas em lei e poderão ocasionar a perda do auxílio.
+
+14.3 Registro de Frequência - à unidade a ser delegada pela Direção Geral do campus
+
+14.3.1 Registrar a frequência mensal dos bolsistas utilizando-se do Sistema de Gerenciamento da Assistência Estudantil – SiGAE, a partir das informações de acompanhamento de frequência obtidas junto aos responsáveis pela matéria no campus.
+
+14.3.1.1 Para fins de efetivação do registro de frequência, considerar-se-á os percentuais previstos no item 14.2.3.
+
+14.3.2 Certificar-se da existência de atestado médico protocolado pelo bolsista no campus, para fins de justificativa no momento do registro da frequência no SiGAE.
+
+14.3.3 Observar o prazo final definido pelo campus para efeitos de liquidação de pagamento mensal, para fins de registro de frequência.
+
+14.3.3.1 Durante o período de registro de frequência, o sistema admite a realização de alterações e/ou correções.
+
+14.3.3.2 Findado o prazo para o registro de frequência, não serão autorizadas alterações nos registros efetuados.
+
+14.3.3.3 Nos casos de registros de frequência realizados equivocadamente, e que ocasionam em prejuízos indevidos ao discente, deverá ser instruído no processo administrativo aberto pelo campus, o Termo Circunstanciado Avaliado - TCA, em que deverá consistir na justificativa detalhada das circunstâncias e motivos que levaram ao respectivo registro.
+
+14.3.3.3.1 O documento deverá ser assinado pelo servidor que efetuou os registros, o chefe de SEPAE, e mediante anuência do Diretor Geral, deverá ser tramitado o processo à DAES, para análise e posterior deliberação por parte da Pró-Reitoria de Ensino.
+
+14.3.3.4 A ausência do registro de frequência mensal incidirá na suspensão do pagamento do auxílio ao bolsista naquele mês, não sendo possível o pagamento retroativo.
+
+14.3.3.5 O período de férias acadêmicas correspondentes ao mesmo ano/período letivo, deve ser computado como frequência regular.
+
+14.3.3.6 As situações de discentes que iniciarão ano/período letivo ou componentes curriculares em meses subsequentes, ou que não seja possível aferir a frequência do discente, deverá, no SiGAE, ser assinalada a opção Frequência Suspensa - FS.
+
+14.3.3.6.1 Nos casos de registro frequência suspensa, o bolsista não fará jus ao pagamento correspondente ao mês de competência.
+
+14.3.4 O indicado pela Direção Geral deverá abrir chamado por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), para solicitar o acesso e habilitação da função para operações no Sistema de Gerenciamento da Assistência Estudantil, anexando a expressa indicação realizada.
+
+14.4 Rotinas Financeiras - à unidade a ser delegada pela Direção Geral do campus
+
+14.4.1 Abrir processo no Sistema Eletrônico de Informações, do tipo: Finanças: Execução Orçamentária e Financeira, e relacionar o mesmo ao processo administrativo deste Programa: 23411.004284/2024-52 e ao processo administrativo aberto pela unidade correspondente no campus.
+
+14.4.2 Proceder ao registro de empenho do respectivo programa, no valor destinado ao campus.
+
+14.4.2.1 Reforçar a NE sempre que necessário, a partir dos repasses orçamentários da DAES ao campus.
+
+14.4.2.2 Anular parcial ou totalmente a NE, a pedido da Diretoria de Assuntos Estudantis, ou sempre que couber a ação.
+
+14.4.3 Cadastrar, no SIAFI, as contas correntes dos bolsistas dentro do prazo de 45 (quarenta e cinco) dias, a partir da publicação do edital que concede o auxílio ao discente.
+
+14.4.4 Receber a solicitação de pagamento da unidade competente, elaborar os cálculos devidos a cada bolsista e proceder à Lista de Credores no SIAFI.
+
+14.4.4.1 Os bolsistas com saídas e entradas durante o interstício deverão ter seus pagamentos proporcionais lançados no SIAFI.
+
+14.4.5 Proceder ao acompanhamento de liquidação, pagamento e devolução por Domicílio Bancário Inexistente (DBI), bem como apontar e lançar retroatividade nestes casos, mediante autorização do ordenador de despesas, em no máximo, por duas tentativas.
+
+14.4.6 Excluir da Lista de Credores, os discentes que tiveram seus desligamentos efetivados mediante Edital publicado pela DAES.
+
+14.4.6.1 Nos casos de discentes desvinculados do Programa ou do Instituto Federal do Paraná, intempestivamente, a ponto de não haver tempo hábil para publicação de Edital de desligamento e do TD, os mesmos poderão ser excluídos da Lista de Credores, de modo a evitar o pagamento indevido.
+
+14.4.6.1.1 Nestas condições, o campus deverá adotar providências urgentes para fins de formalizar o desligamento, bem como providências pertinentes a cada caso.
+
+14.4.7 Emitir GRU aos discentes que tenham recebido recursos indevidamente, com vencimento em até 30 (trinta) dias a partir da data de emissão, preferencialmente em cota única.
+
+ 
+
+15. DA ADMINISTRAÇÃO DO PROGRAMA - DAES
+
+15.1 Acompanhar e executar ações quando do recebimento dos e-mails SEI para providências de ordem administrativa e financeira.
+
+15.2 Tornar públicos editais de movimentação de discentes, de desligamento, de chamadas de lista de espera, se aplicável, no Sistema Eletrônico de Informações e na página da Assistência Estudantil, sempre a pedido do campus.
+
+15.3 Proceder, mediante edital de recondução, o estorno do Termo de Compromisso no Sistema de Gerenciamento da Assistência Estudantil - SiGAE.
+
+15.3.1 O estorno é devido uma única vez, na ocorrência de segundo desligamento efetuado pelo campus, ou automático, o discente não será reconduzido ao programa.
+
+15.4 A DAES realizará as tratativas quanto à descentralização de recursos aos campi para fins de registro e reforço de empenho.
+
+15.5 Analisar as circunstâncias relatadas pelos campi, no Termo Circunstanciado Avaliado, e proceder aos encaminhamentos legais.
+
+15.6 Instruir o processo administrativo, mediante despachos, memorandos, notas técnicas, e demais documentos para o bom desempenho e execução do programa.
+
+15.7 Acompanhar o saldo de recursos mensalmente, e para novas descentralizações realizar as deduções pertinentes.
+
+15.8 Compilar e encaminhar, mensalmente, as informações para publicação de transparência pública no Plano de Dados Abertos, dos discentes que receberam recursos.
+
+ 
+
+16. DOS MOTIVOS DE DESLIGAMENTO
+
+16.1 São motivos de desligamento:
+
+Trancamento de matrícula do discente;
+
+Transferência externa;
+
+Jubilamento (Prazo de integralização);
+
+Desistência do curso;
+
+Conclusão do curso;
+
+Solicitação do próprio discente, por escrito;
+
+A pedido da administração, por escrito;
+
+Frequência inferior ao mínimo exigido de 75% por dois meses consecutivos ou alternados;
+
+Conta corrente não apresentada no prazo, conforme item 14.2.2.2;
+
+Comprovação, a qualquer tempo, de informações inverídicas fornecidas pelo discente;
+
+Não assinar/entregar, dentro do prazo estipulado, o Termo de Compromisso.
+
+Falecimento;
+
+16.2 Os desligamentos automáticos devem ser informados à DAES via e-mail SEI.
+
+16.3 O discente desligado poderá interpor recurso em até 48 (quarenta e oito) horas da publicação do edital de desligamento, preferencialmente por e-mail ao campus.
+
+16.4 Ao término da vigência do programa, todos os discentes ficam automaticamente desligados, e dispensados de assinatura de termo de desligamento.
+
+ 
+
+17. DA TRANSFERÊNCIA INTERNA
+
+17.1 O discente que transferir-se a outro campus do IFPR levará consigo o direito adquirido ao auxílio concedido, sendo a partir da data da transferência, o pagamento a ser processado pelo campus de destino.
+
+17.2 O campus de origem deverá emitir o Termo de Desligamento, no SiGAE, por motivos de transferência interna, utilizando-se como base legal, a publicação do edital de transferência do auxílio para o campus destino.
+
+ 
+
+18. DAS DISPOSIÇÕES FINAIS
+
+18.1 É de inteira responsabilidade do discente e/ou de seu responsável legal a interpretação deste Edital, bem como o acompanhamento da publicação de todos os editais, atos, instruções e comunicados ao longo do período em que se realiza este Programa, a qual se dará por meio do endereço eletrônico do Sistema Eletrônico de Informações - SEI
+
+(https://sei.ifpr.edu.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_pesquisar&id_orgao_publicacao=0)
+
+ou, em casos específicos, no endereço eletrônico da Assistência Estudantil, disponível em
+
+https://reitoria.ifpr.edu.br/menu-academico/assistencia-estudante/editais/, não podendo deles alegar desconhecimento ou discordância.
+
+18.2 A DAES não se responsabiliza por falhas técnicas de conexão à internet das operadoras do candidato, e que resultarem em inscrições e procedimentos não registrados na base do Sistema de Gerenciamento da Assistência Estudantil - SiGAE.
+
+18.3 Em caso de dúvidas em alguma etapa deste Programa, o discente e/ou seu responsável legal, deverá contatar ao seu campus para fins de esclarecê-las.
+
+18.4 O campus é responsável pela recepção, zelo e administração arquivística física e/ou digital de todas as documentações pertinentes a este edital.
+
+18.5 A DAES, a qualquer tempo poderá solicitar quaisquer documentos para fins de acompanhar a efetividade da execução do programa.
+
+18.6 Compete à DAES divulgar e fiscalizar o cumprimento deste edital.
+
+18.7 Caberá à DAES, durante o período de vigência deste Programa, rever em qualquer momento o auxílio concedido ao discente, mediante comprovação de má fé nas informações prestadas.
+
+18.8 Caberá à DAES, a qualquer tempo, acompanhar e fiscalizar, solicitar relatórios de execução parcial, além daqueles exigidos neste Edital, bem como realizar visitas, chamada por videoconferência ou ainda convocação dos participantes para reuniões tanto nas dependências da Reitoria ou dos campi para levantamento, diagnóstico de desempenho dos discentes.
+
+18.9 A qualquer tempo este Programa poderá ser revogado total ou parcialmente, por motivo de interesse público ou da Administração Pública, sem que isso implique direito de indenização de qualquer natureza.
+
+18.10 Na hipótese de não ocorrer disponibilidade orçamentária e financeira, para o exercício de 2025, a partir da Ação 2994, recurso previsto para este Edital, caberá à DAES, a qualquer tempo, tornar sem efeito este Edital.
+
+18.11 A DAES não se responsabiliza pelo não recebimento ou atraso dos auxílios devido a problemas nas contas bancárias dos discentes.
+
+18.12 Cabe à DAES a abertura de novos Editais de convocação, bem como a ampliação e/ou redução de auxílios deste Programa, durante o ano de 2025, a qualquer momento, quando julgar necessário para o desenvolvimento e êxito da política de assistência estudantil do IFPR, mediante disponibilidade orçamentária e edital específico.
+
+18.13 O saldo de recursos não utilizados neste Programa poderá ser recolhido de modo que, mediante estudo e planejamento, seja redistribuído entre os demais programas da Assistência Estudantil.
+
+18.14 Em eventual descumprimento de quaisquer etapas do programa por parte dos servidores, serão adotadas as medidas previstas no Art. 71, da Resolução nº 09/2021, e na Instrução Normativa nº 17/2019, da Corregedoria Geral da União - CGU.
+
+18.14.1 Em caso de pagamentos solicitados por parte do servidor, de forma indevida, e não havendo condições de o discente realizar a devolução, o agente público deverá efetuar o ressarcimento ao erário.
+
+18.15 Os casos omissos, não previstos neste Edital, serão dirimidos pela DAES.
+
+18.16 Elege-se o foro da Justiça Federal de Curitiba como competente para dirimir as questões do edital não solucionadas administrativamente.
+
+Curitiba, 11 de fevereiro de 2025.
+
+ `;
 
             var edital87 = `Edital N°87, de 20 de setembro de 2024 PROCESSO SELETIVO IFPR 2025 - CURSOS TÉCNICOS INTEGRADOS AO ENSINO MÉDIO
 
@@ -4192,7 +4773,8 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
 
 `;
 
-            var TodosOsEditais = edital87 + edital88 + edital89 + edital90 ; // + edital3 ;
+            //var TodosOsEditais = edital87 + edital88 + edital89 + edital90 ; // + edital3 ;
+			var TodosOsEditais = edital6_2025;
 
             try {
                 // Adiciona os editais ao histórico da IA, mas não à exibição do usuário
@@ -4420,7 +5002,8 @@ e) Quaisquer declarações tributárias referentes a pessoas jurídicas vinculad
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../assets/banner-geral-1536x864.png');
+	    /* background-image: url('../assets/banner-geral-1536x864.png'); */
+    background-image: url('../assets/assistencia-estudantil.png');
     background-size: cover;
     background-position: center;
     z-index: -1;

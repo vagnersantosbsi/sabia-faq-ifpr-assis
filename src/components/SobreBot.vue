@@ -20,8 +20,6 @@ import fotoAnna from "@/assets/foto-anna.jpg";
 import fotoNicolas from "@/assets/foto-nicolas.jpg";
 import fotoNikoli from "@/assets/foto-nikoli.jpg";
 import fotoNovo3 from "@/assets/foto-novo3.jpg";
-import fotoNovo4 from "@/assets/foto-christopher.jpg";
-import fotoNovo5 from "@/assets/foto-kaike.jpg";
 
 
 export default {
@@ -49,20 +47,6 @@ export default {
           name: "Nikoli Azevedo",
           image: fotoNikoli,
           link: "https://www.instagram.com/nikoli_azevedo?igsh=MW4xM29qY2s0emZqaQ==",
-          description:
-            "Discente do IFPR - Campus Assis Chateaubriand",
-        },
-        {
-          name: "Christopher",
-          image: fotoNovo4,
-          link: "https://www.instagram.com/novoautor1",
-          description:
-            "Discente do IFPR - Campus Assis Chateaubriand",
-        },
-        {
-          name: "Kaike",
-          image: fotoNovo5,
-          link: "https://www.instagram.com/novoautor1",
           description:
             "Discente do IFPR - Campus Assis Chateaubriand",
         },
