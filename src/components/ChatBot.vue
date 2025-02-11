@@ -60,7 +60,7 @@ export default {
             {
                 id: 0,
                 sender: 'user',
-                text: 'Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar no Processo Seletivo do IFPR Campus Assis Chateaubriand! O que te traz por aqui? 😉',
+                text: 'Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar na busca de informações no Instituto Federal do Paraná! O que te traz por aqui? 😉',
             },
 
         ]);
