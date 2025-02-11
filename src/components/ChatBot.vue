@@ -66,7 +66,7 @@ export default {
         ]);
         //const messages = ref([]); // Inicie o array vazio
         //require('dotenv').config(); // Carrega as variáveis de ambiente do .env.local
-        const API_KEY = "AIzaSyB14MyBOZWdEn61yWBuAgLHJQBi3VbRCS8"; // "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
+        const API_KEY = "AIzaSyBM6cOeHblW30Zxi8JCnwnirSAZgswlAOM"; // "AIzaSyAZiRcKQnUxl8KmDmux1KUreqnjRD_10Ew";// process.env.API_KEY;
         const genAI = new GoogleGenerativeAI(API_KEY);
 		var promptInicialDevBot = `Gemini, você é um Chatbot de texto com mensagens de orientações sobre o Programa de Assistência Complementar ao Estudande do IFPR , seus usuários tem interesse nas informações e querem se inscrever no programa. 
 								Regras:
