@@ -60,7 +60,7 @@ export default {
             {
                 id: 0,
                 sender: 'user',
-                text: 'Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar na busca de informações no Instituto Federal do Paraná! O que te traz por aqui? 😉',
+                text: 'Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar na busca de informações da ASSISTÊNCIA ESTUDANTIL no Instituto Federal do Paraná! O que te traz por aqui? 😉',
             },
 
         ]);
@@ -76,7 +76,7 @@ export default {
 									4) Os usuários serão alunos regularmente matriculados no IFPR, portanto não erre as informações. 
 									5) Existe a possibilidade de pessoas de várias Campus diferente  buscarem informações contigo.
 									6) As respostas devem sempre informar e relacionar o respectivo edital. 
-									7) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link.
+									7) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link (https://sei.ifpr.edu.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?9LibXMqGnN7gSpLFOOgUQFziRouBJ5VnVL5b7-UrE5QGyfpHxZfytoIz7osAuHLflA0XiHnlBeUEJiMnT1IecWollrhLbUjX6p1limNBfyFf-iF1Ne5glhaO0QOYs3Bk).
 									
 									`;
 		var ideiaDoChatBot = "Gemini, segue a ideia deste Chatbot, mensagem: Pssssiu! 🐦 Sou o Sabiá, e cheguei voando para te ajudar nas informações que tenha interesse no IFPR! O que te traz por aqui? 😉";
@@ -709,6 +709,827 @@ https://reitoria.ifpr.edu.br/menu-academico/assistencia-estudante/editais/, não
 18.16 Elege-se o foro da Justiça Federal de Curitiba como competente para dirimir as questões do edital não solucionadas administrativamente.
 
 Curitiba, 11 de fevereiro de 2025.
+
+ANEXO I
+
+DOCUMENTAÇÃO PARA COMPROVAÇÃO DE ELEGIBILIDADE (REQUISITOS)
+
+Para ser elegível a este Edital e concorrer ao auxílio, o estudante deve atender e comprovar uma das seguintes situações: 
+
+SITUAÇÃO
+
+DOCUMENTOS COMPROBATÓRIOS
+
+QUEM DEVE ENTREGAR
+
+Renda Familiar Per Capita */
+
+Ocupação trabalho e emprego.
+
+ 
+
+Obrigatório para todas as pessoas que compõem o grupo familiar maiores de 18 anos, inclusive o candidato, de acordo com a condição de trabalho.
+
+ 
+
+Caso o núcleo familiar seja composto por integrante de diferentes categorias (assalariados, autônomos, etc.), cada membro deverá apresentar a documentação referente a sua própria categoria
+
+
+				
+Contracheque/holerite do mês de fevereiro/2025. Nos casos de contracheque/holerite que contenham: horas extras, ou adicional noturno, ou insalubridade, ou comissões, ou periculosidade, ou penosidade e transferência, deverá apresentar os três últimos holerites dos meses dezembro/2024, janeiro e fevereiro/2025 
+
+
+				
+Trabalhadores do mercado formal(celetistas/servidores públicos/
+
+aprendiz)
+
+
+				
+Preencher e assinar declaração de Renda de Trabalho Informal, utilizar MODELO 2, deste Anexo.
+
+
+				
+Trabalhadores do mercado informal
+
+
+				
+Contracheque/holerite do mês de fevereiro/2025. Nos casos de contracheque/holerite que contenham: horas extras, ou adicional noturno, ou insalubridade, ou comissões, ou periculosidade, ou penosidade e transferência, deverá apresentar os três últimos holerites dos meses dezembro/2024, janeiro e fevereiro/2025; ou
+
+
+				
+
+				
+Contrato de trabalho.
+
+
+				
+Trabalhador Intermitente
+
+(trabalhador intermitente: prestador de serviços, com registro em carteira ou contrato, com subordinação, não contínua, ocorrendo com alternância de períodos de prestação de serviços e de inatividade
+
+Ex: garçom)
+
+
+				
+Contracheque/holerite do mês de fevereiro/2025. Nos casos de contracheque/holerite que contenham: horas extras, ou adicional noturno, ou insalubridade, ou comissões, ou periculosidade, ou penosidade e transferência, deverá apresentar os três últimos holerites dos meses dezembro/2024, janeiro e fevereiro/2025, OU
+
+
+				
+
+				
+Contrato de trabalho, OU
+
+
+				
+
+				
+Preencher e assinar declaração de Renda de Trabalho Temporário, utilizar MODELO 2, deste Anexo.
+
+
+				
+Trabalhador temporário, trabalhador intermitente,
+
+estágio e 
+
+aprendizagem
+
+
+				
+Preencher e assinar Declaração renda de autônomo/liberal, utilizar MODELO 2, deste Anexo. E
+
+
+				
+
+				
+Última guia de contribuição para o INSS (Carnê GPS), E
+
+
+				
+
+				
+Declaração do sindicato, associação, ou cooperativa, contendo o valor recebido e as atividades desenvolvidas, quando houver OU;
+
+
+				
+
+				
+Declaração Comprobatória de Percepção de Rendimentos (DECORE) emitida por profissional contábil, quando houver.
+
+
+				
+ 
+
+Autônomos e Liberais
+
+ 
+
+
+				
+Preencher e assinar declaração de Renda de Trabalhador Rural, utilizar MODELO 2 deste Anexo. Anexando as três últimas notas de vendas de produtos. E
+
+
+				
+
+				
+Declaração de Aptidão ao PRONAF (DAP), OU
+
+
+				
+
+				
+Declaração do sindicato rural, Associação, Cooperativa, ou Prefeitura, contendo o valor recebido mensalmente, contendo informações detalhadas referentes ao valor recebido e atividade desenvolvida.
+
+
+				
+Produtores rurais
+
+
+				
+Contracheque/holerite do mês de fevereiro/2025. Nos casos de contracheque/holerite que contenham: horas extras, ou adicional noturno, ou insalubridade, ou comissões, ou periculosidade, ou penosidade e transferência, deverá apresentar os três últimos holerites dos meses dezembro/2024, janeiro e fevereiro/2025, OU
+
+
+				
+
+				
+Contrato de prestação de serviço.
+
+
+				
+Empregado rural
+
+
+				
+Preencher e assinar declaração de Renda de Empresário/Microempreendedor individual ou pessoas com participação em cotas de empresas e microempresas, o MODELO 2 deste Anexo; 
+
+
+				
+
+				
+Pró Labore do mês de fevereiro/2025.
+
+
+				
+
+				
+Declaração de Imposto de Renda de Pessoa Jurídica – IRPJ – completa, exercício 2024 ano calendário 2023, acompanhado do recibo de entrega, quando houver,
+
+
+				
+
+				
+Declaração Comprobatória de Percepção de Rendimentos (DECORE), quando houver;
+
+
+				
+
+				
+Declaração completa de Informações socioeconômicas e Fiscais (DEFIS- Simples Nacional) para Microempresários e Empresários de Pequeno Porte, quando houver.
+
+
+				
+Empresário ou pessoas com participação em cotas de empresas ou microempresas
+
+
+				
+Preencher e assinar a declaração de Renda de Empresário/Microempreendedor individual ou pessoas com participação em cotas de empresas e microempresas, o MODELO 2 deste Anexo; E
+
+
+				
+
+				
+Declaração de Imposto de Renda de Pessoa Jurídica – IRPJ – completa, quando houver,
+
+
+				
+
+				
+Declaração Anual do Simples Nacional (SIMEI), último vigente.
+
+
+				
+Microempreendedor Individual
+
+ 
+
+
+				
+Emitir Extrato de Pagamento de Benefício do INSS, via Meu INSS (https://meu.inss.gov.br/#/login), OU;
+
+
+				
+
+				
+Extrato bancário detalhado com a identificação do titular, contendo o número do benefício do INSS e o valor integral do benefício (sem desconto de empréstimo consignado), de um dos 03 últimos meses (dezembro/2024, janeiro e fevereiro/2025). OU
+
+
+				
+
+				
+Preencher e assinar a declaração de Renda de Aposentados/ pensionistas e beneficiários de auxílio-doença e demais benefícios INSS no MODELO 2 deste Anexo, informando o valor integral do benefício e extrato simples emitido pelo caixa eletrônico.
+
+
+				
+
+				
+Comprovante de aposentadoria (caso não seja INSS).
+
+
+				
+Aposentados/ pensionistas e beneficiários de auxílio-doença e demais benefícios INSS
+
+
+				
+Contracheque/holerite do mês de fevereiro/2025. Nos casos de contracheque/holerite que contenham: horas extras, ou adicional noturno, ou insalubridade, ou comissões, ou periculosidade, ou penosidade e transferência, deverá apresentar os três últimos holerites dos meses dezembro/2024, janeiro e fevereiro/2025, OU
+
+
+				
+
+				
+Contrato de prestação de serviço.
+
+
+				
+Empregado Doméstico
+
+
+				
+Cópia do Contrato(s) de estágio ou Termo de Compromisso
+
+
+				
+Estagiário/Bolsista
+
+ 
+
+
+				
+Em caso de desemprego recente, apresentar Rescisão de Contrato ou Extrato do FGTS e comprovante de seguro desemprego, caso receba. e/ou;
+
+
+				
+
+				
+Preencher e assinar a declaração que não possui renda, utilizar MODELO 3, deste Anexo.
+
+
+				
+Pessoa SEM renda (todas as pessoas com idade superior a 18 anos, residentes na casa e desempregadas, discentes ou que não trabalham fora - deverão apresentar)
+
+
+				
+Contrato(s) de locação ou arrendamento(s) devidamente registrado(s), OU
+
+
+				
+
+				
+No caso de não possuir Contrato, preencher e assinar a declaração para diversas situações, utilizar MODELO 1 deste Anexo, informando o valor recebido
+
+
+				
+Para rendimentos de aluguel ou arrendamento de bens móveis e imóveis urbanos e/ou rurais
+
+
+				
+Decisão judicial discriminando o nome dos beneficiários e o valor a ser pago, se houver, e comprovante de recebimento de pensão de um dos meses dezembro/2024, janeiro e fevereiro/2025, OU
+
+
+				
+
+				
+Preencher e assinar declaração de recebimento de pensão alimentícia, utilizar MODELO 4, deste Anexo.
+
+
+				
+Para os casos de RECEBIMENTO de pensão alimentícia
+
+Composição Familiar **	
+
+				
+RG (frente e verso) ou Certidão de Nascimento, ou documento oficial com foto, de todos os componentes da família.
+
+
+				
+
+				
+CPF de todos os componentes da família maiores de 18 anos.
+
+
+				
+
+				
+Declaração Completa do Imposto de Renda de Pessoa Física (IRPF), acompanhada do recibo de entrega, exercício 2024, ano calendário 2023.
+
+
+				
+
+				
+Para os casos de pessoas isentas de declarar Imposto de Renda, apresentar comprovante exercício 2024, disponível (Consulta restituição IRPF)
+
+
+				
+
+				
+Carteira de Trabalho e Previdência Social (física) atualizada para todos os componentes da família maiores de 18 anos, contendo as páginas: de identificação, da qualificação civil, do registro do último contrato de trabalho e a página e posterior em branco (mesmo sem registro); ou
+
+
+				
+
+				
+Carteira de Trabalho Digital em PDF Único atualizada, contendo todos os dados pessoais, contrato de trabalho, caso não possua nenhum registro de contrato de trabalho, deverá apresentar a pagina “nenhum contrato de trabalho encontrado”
+
+
+				
+
+				
+Caso não tenha carteira de trabalho, informar tal situação por meio da Declaração Para Diversas Situações (utilizar MODELO 1, deste Anexo). Exº furto/roubada/perda ( apresentar junto o Boletim de Ocorrência); nunca foi solicitada a emissão da CTPS; 
+
+
+				
+
+				
+Comprovante de endereço de um dos meses (dezembro/2024, janeiro ou fevereiro/2025).
+
+
+				
+Obrigatório para o discente candidato e os demais familiares declarados no formulário de solicitação
+Ser oriundo da rede pública de educação, ou oriundo da rede privada na condição de bolsista integral; 
+
+
+				
+Histórico Escolar do ensino fundamental (para discentes do ensino de nível médio e subsequente).
+
+
+				
+
+				
+Histórico Escolar do ensino médio (para discentes da graduação).
+
+
+				
+
+				
+Comprovante de bolsa integral em escola de rede privada, quando for o caso.
+
+
+				
+ 
+Estar matriculado nas vagas reservadas de que trata a Lei nº 12.711 (autodeclarados pretos, pardos, indígenas e quilombolas e por pessoas com deficiência); 
+
+Caberá ao IFPR verificar no seu banco de dados, junto ao registro escolar quais candidatos entraram por ações afirmativas
+ 
+Estudante com deficiência a qual requeira acompanhamento pedagógico necessário à sua permanência; 
+
+
+				
+Laudo médico ou psicológico
+
+
+				
+ 
+Estudante oriundo de entidade ou de abrigo de acolhimento institucional não adotado em idade de saída; 
+
+
+				
+Declaração da entidade/abrigo.
+
+
+				
+ 
+Estudante quilombola, indígena ou de comunidades tradicionais; 
+
+
+				
+Autodeclaração de Etnia, caso não tenha ingressado por ações afirmativas, conforme Modelo 5.
+
+
+				
+ 
+Estudante estrangeiro em situação de vulnerabilidade socioeconômica ou refugiado.
+
+
+				
+Auto declaração e comprovação de renda.
+
+
+				
+ 
+* CASO FIQUE EM DÚVIDA SOBRE O COMPROVANTE DE RENDA, ENTRE EM CONTATO COM A SEÇÃO PEDAGÓGICA DE ASSUNTOS ESTUDANTIS DO SEU CAMPUS.
+
+** Apresentar os comprovantes de renda de TODAS as pessoas que residem em sua casa. Caso você resida sozinho e dependa financeiramente de seus familiares deverá apresentar comprovante de renda dos seus familiares e/ou pessoas que contribuem financeiramente com suas despesas e com a manutenção no IFPR.
+
+ 
+
+ANEXO II
+
+DOCUMENTAÇÃO COMPLEMENTAR PARA COMPROVAR OS INDICADORES DE VULNERABILIDADE DESCRITOS NO QUADRO ABAIXO:
+
+* A AUSÊNCIA DA DOCUMENTAÇÃO COMPLEMENTAR ACARRETARÁ NO COMPROMETIMENTO DA ANÁLISE SOCIOECONÔMICA, MAS NÃO GERA INDEFERIMENTO NA FALTA DELES.
+
+ 
+INDICADOR
+
+QUEM DEVE APRESENTAR
+
+DOCUMENTOS DE COMPROVAÇÃO
+
+COMPOSIÇÃO FAMILIAR
+
+O responsável legal que declarem possuir a guarda ou tutela do menor que não seja seu filho biológico. menor Ex: menor que reside com a avó, tios, ou outras pessoas, e os pais não residem na mesma casa;
+
+
+				
+Documentação oficial referente à Guarda ou Tutela OU
+
+
+				
+
+				
+Caso não tenha documento oficial de Guarda ou Tutela, preencher e assinar declaração para Diversas Situações (utilizar MODELO 1, deste Anexo).
+
+
+				
+Moradia
+
+Mora em imóvel alugado
+
+
+				
+Contrato de aluguel ou Comprovante de Pagamento de aluguel contendo dados do locador e locatário, valor do aluguel, discriminação do endereço do imóvel, data e assinatura, e Recibo de pagamento de um dos meses: dezembro/2024, janeiro ou fevereiro/2025, OU
+
+
+				
+
+				
+Declaração assinada pelo locador e locatário, contendo dados do locador e locatário, valor do aluguel, discriminação do endereço do imóvel, data e assinatura e Recibo de pagamento de um dos meses meses: dezembro/2024, janeiro ou fevereiro/2025.
+
+
+				
+Mora em imóvel financiado
+
+ 
+
+
+				
+Comprovante de financiamento contendo valor da prestação e quantidade de parcelas a pagar; OU
+
+
+				
+
+				
+Boleto desde que seja possível identificar mutuário, valor da prestação de um dos meses: dezembro/2024, janeiro ou fevereiro de 2025; OU
+
+
+				
+
+				
+Extrato do financiamento
+
+
+				
+Mora em comunidade quilombola ou indígena
+
+
+				
+Preencher e assinar declaração de pertencimento à comunidade quilombola ou indígena, conforme MODELO 5, deste Anexo, OU
+
+
+				
+
+				
+Declaração de pertencimento à comunidade indígena, expedido pela FUNAI;
+
+
+				
+Imóvel em Situação Irregular
+
+ 
+
+
+				
+Preencher e assinar declaração que reside em área de ocupação irregular, por meio da Declaração Para Diversas Situações (utilizar MODELO 1, deste Anexo).
+
+
+				
+Saúde
+
+ 
+
+Todos os familiares com diagnóstico de doença grave ou crônica, transtorno mental e/ou Pessoa com deficiência)
+
+
+				
+Último atestado, laudo ou declaração médica; assinado por médico com CRM e contendo a Classificação Internacional de Doenças (CID). OU
+
+
+				
+
+				
+Carteirinha de Associação de portador de doença/deficiência.
+
+
+				
+ 
+
+Obs.: entende-se por doença crônica, com base na Portaria MPAS-MS-2.998/2001, devidamente comprovadas mediante atestado médico, as seguintes doenças: tuberculose ativa; hanseníase; alienação mental; neoplasia maligna; cegueira; paralisia irreversível e incapacitante; cardiopatia grave; doença de Parkinson; espondioloartrose anquilosante; nefropatia grave; estado avançado da doença de Paget - osteíte deformante; síndrome da imunodeficiência adquirida - Aids; contaminação por radiação e hepatopatia grave.
+
+Participação em Programas Sociais
+
+Família que recebe Bolsa Família, Família Paranaense ou de programas Municipais de transferência de renda
+
+
+				
+Extrato bancário de recebimento do benefício com identificação de beneficiário, de um dos meses: dezembro/2024, janeiro ou fevereiro/2025.
+
+
+				
+ 
+CASO O SOLICITANTE OU SEUS FAMILIARES NÃO POSSUAM ALGUM DOCUMENTO EXIGIDO DEVE SER ENTREGUE UMA DECLARAÇÃO ASSINADA, DE PRÓPRIO PUNHO, EXPLICANDO A SITUAÇÃO.
+
+ 
+QUALQUER DÚVIDA SOBRE OS DOCUMENTOS OU PREENCHIMENTO DO FORMULÁRIO DE INSCRIÇÃO, PROCURE A SEÇÃO PEDAGÓGICA DE ASSUNTOS ESTUDANTIS DO SEU CAMPUS.
+
+ 
+
+MODELO 1
+
+DECLARAÇÃO PARA DIVERSAS SITUAÇÕES
+
+(NÃO SUBSTITUI DOCUMENTOS ESPECIFICAMENTE REFERENCIADOS OU SITUAÇÕES EXPLICITAMENTE DEFINIDAS)
+
+EU, ___________________________________________________________________, portador do RG__________________________,CPF_____________________________DECLARO:
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+E, por isso ser expressão da verdade, comprometo-me a fazer prova onde necessário for, para os devidos fins de direito, repartições públicas federais, autarquias e onde mais necessário for, na forma da Lei.
+
+Declaro também estar ciente das penalidades legais a que estou sujeito(a):
+
+Crime de Falsidade Ideológica
+
+Art. 299 - Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante:
+
+Pena - reclusão, de 1 (um) a 5 (cinco) anos, e multa, se o documento é público, e reclusão de 1 (um) a 3 (três) anos, e multa, se o documento é particular.
+
+Crime de Estelionato
+
+Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento:
+
+Pena - reclusão, de 1 (um) a 5 (cinco) anos, e multa.
+
+Assim sendo, por ser o aqui declarado a mais pura expressão da verdade, assino esta Declaração para que surta seus efeitos legais.
+
+ 
+
+__________________________, _____/_____/2025
+
+Local data
+
+ 
+
+____________________________
+
+Assinatura do/a declarante
+
+ 
+
+ 
+
+ 
+
+MODELO 2
+
+DECLARAÇÃO DE RENDA
+
+Eu, _______________________________________________________________________, portador do RG_________________________, CPF_________________________ declaro para os devidos fins que sou:
+
+( ) trabalhador informal (sem contribuição ao INSS).
+
+( ) trabalhador temporário
+
+( ) trabalhador autônomo/liberal (com contribuição ao INSS).
+
+( ) produtor rural
+
+( ) Empresário ou pessoas com participação em cotas de empresas ou microempresas
+
+( ) Microempreendedor Individual - MEI
+
+( ) Aposentados/ pensionistas e beneficiários de auxílio-doença e demais benefícios INSS exercendo atualmente a profissão/ocupação de _______________________________________ e recebendo mensalmente o valor aproximado de R$_________________________.
+
+E, por isso ser expressão da verdade, comprometo-me a fazer prova onde necessário for, para os devidos fins de direito, repartições públicas federais, autarquias e onde mais necessário for, na forma da Lei.
+
+Declaro também estar ciente das penalidades legais a que estou sujeito(a):
+
+Art. 299 - Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa, se o documento é público, e reclusão de 01 (um) a 03 (três) anos, e multa, se o documento é particular.
+
+Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa.
+
+Assim sendo, por ser o aqui declarado a mais pura expressão da verdade, assino esta declaração para que surta seus efeitos legais.
+
+ 
+
+__________________________, _____/_____/2025
+
+Local Data 
+
+ 
+
+_______________________________________
+
+Assinatura do/a declarante
+
+ 
+
+ 
+
+ 
+
+ 
+
+MODELO 3
+
+DECLARAÇÃO NÃO POSSUI RENDA MENSAL
+
+ 
+
+Eu, _______________________________________________________________________, portador do RG nº __________________, inscrito no CPF _____________________,
+
+ 
+
+DECLARO, sob as penas das leis, que não recebo, atualmente: salários, proventos, pensão por morte, aposentadorias, seguro desemprego, comissões, pró-labore, outros rendimentos do trabalho não assalariado, rendimentos do mercado informal ou autônomo, rendimentos auferidos do patrimônio e quaisquer outros.
+
+Declaro também estar ciente das penalidades legais a que estou sujeito(a):
+
+Crime de Falsidade Ideológica
+
+Art. 299 - Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa, se o documento é público, e reclusão de 01 (um) a 03 (três) anos, e multa, se o documento é particular.
+
+Crime de Estelionato
+
+Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa.
+
+ 
+
+Assim sendo, por ser o aqui declarado a mais pura expressão da verdade, assino esta declaração para que surta seus efeitos legais.
+
+ 
+
+ 
+
+__________________________, _____/_____/2025
+
+Local Data
+
+ 
+
+ 
+
+_______________________________________________
+
+Assinatura do/a declarante
+
+ 
+
+ 
+
+MODELO 4
+
+DECLARAÇÃO DE PENSÃO ALIMENTÍCIA
+
+ 
+
+Eu, _______________________________________________________________________, portador(a) do RG nº __________________, inscrito(a) no CPF ______________________________, nos termos do Edital Vigente DECLARO, para os devidos fins, que:
+
+( ) Recebo pensão alimentícia no valor mensal de R$ _____(_________________________________), proveniente da guarda de _________________________________________________________________________________________________(nome do filho/a)
+
+ 
+
+Declaro também estar ciente das penalidades legais a que estou sujeito(a):
+
+Crime de Falsidade Ideológica
+
+Art. 299 - Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa, se o documento é público, e reclusão de 01 (um) a 03 (três) anos, e multa, se o documento é particular.
+
+Crime de Estelionato
+
+Art. 171 - Obter, para si ou para outrem, vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil, ou qualquer outro meio fraudulento:
+
+Pena - reclusão, de 01 (um) a 05 (cinco) anos, e multa.
+
+Assim sendo, por ser o aqui declarado a mais pura expressão da verdade, assino esta declaração para que surta seus efeitos legais.
+
+ 
+
+ 
+
+__________________________, _____/_____/2025
+
+Local Data
+
+ 
+
+_________________________________________
+
+Assinatura do/a declarante
+
+ 
+
+ 
+
+MODELO 5
+
+DECLARAÇÃO DE PERTENCIMENTO ÉTNICO E DE RESIDÊNCIA (PARA DISCENTE QUILOMBOLA OU INDÍGENA)
+
+As lideranças comunitárias abaixo identificadas, da
+
+( ) COMUNIDADE QUILOMBOLA _______________________________________(nome do Quilombo), OU
+
+( ) COMUNIDADE INDÍGENA __________________________________________(nome da TRIBO)
+
+DECLARAM, para fins de inscrição nos Programas da Assistência Estudantil que o(a) discente __________________________________________________________________(nome completo), cadastrado(a) no CPF sob o número____________________________(onze dígitos), pertencente à Comunidade___________________________________(nome do quilombo ou da tribo ao qual pertence) e reside, localizada no município ____________________________________, UF_____.
+
+Por ser expressão da verdade, firmamos e datamos a presente declaração.
+
+ 
+
+____________________________________________________
+
+Local e data (Informar a Cidade, a UF e o dia, mês e ano da emissão).
+
+ 
+
+LIDERANÇA 1
+
+Nome completo
+
+ 
+CPF:
+
+ 	
+RG:
+
+ 
+Assinatura
+
+ 
+ 
+
+LIDERANÇA 2
+
+Nome completo
+
+ 
+CPF:
+
+ 	
+RG:
+
+ 
+Assinatura
+
+ 
+ 
+LIDERANÇA 3
+
+Nome completo
+
+ 
+CPF:
+
+ 	
+RG:
+
+ 
+Assinatura
+
+ 
+Obs 1: Esta declaração deverá ser utilizada para fins de comprovante de residência do discente:
+
+
+	
+comunidade quilombola, quando a Fundação Cultural Palmares não declarar ou
+
+
+	
+
+	
+comunidade indígena, quando a FUNAI não declarar
+
+
+	
+Obs 2: Se os líderes ou alguns dos líderes signatários da declaração possuir algum vínculo com alguma entidade representativa da comunidade, essa situação deverá ser identificada na declaração, mediante a indicação do nome e aposição do carimbo do CNPJ da entidade a qual representa.
 
  `;
 
