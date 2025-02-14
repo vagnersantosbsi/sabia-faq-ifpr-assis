@@ -131,7 +131,7 @@ export default {
         const sendMessage = async () => {
             if (userInput.value.trim() === '') return;
 
-			var edital6_2025 = `Edital N°6, de 11 de fevereiro de 2025
+			var edital6_2025 = `Edital N°8, de 11 de fevereiro de 2025
 
  
 
@@ -154,7 +154,7 @@ O DIRETOR SISTÊMICO DE ASSUNTOS ESTUDANTIS DO INSTITUTO FEDERAL DE EDUCAÇÃO, 
 
 1.5. Resolução IFPR nº 11, de 21 de dezembro de 2009, que aprova a Política de Apoio Estudantil do Instituto Federal do Paraná;
 
-1.6. Resolução IFPR nº 66, de 13 de dezembro de 2018, aprovada pelo Conselho Superior, a qual institui o Índice de Vulnerabilidade Socioeconômica - IVS, no Instituto Federal do Paraná.
+1.6. Instrução Normativa Conjunta nº 2, de 14 de fevereiro de 2025. 
 
  
 
@@ -208,7 +208,7 @@ ser estudante estrangeiro em situação de vulnerabilidade socioeconômica ou re
 
 4. DA INSCRIÇÃO
 
-4.1 As inscrições serão recebidas das 08h do dia 17 de fevereiro às 12h00 de 04 de abril de 2025, pelo horário de Brasília, exclusivamente pelo Formulário Eletrônico de Inscrição, no Sistema de Gerenciamento da Assistência Estudantil - SiGAE do Instituto Federal do Paraná, disponível em https://sigae.ifpr.edu.br a partir da data de início das inscrições.
+4.1 As inscrições serão recebidas das 08h do dia 24 de fevereiro às 12h00 de 04 de abril de 2025, pelo horário de Brasília, exclusivamente pelo Formulário Eletrônico de Inscrição, no Sistema de Gerenciamento da Assistência Estudantil - SiGAE do Instituto Federal do Paraná, disponível em https://sigae.ifpr.edu.br a partir da data de início das inscrições.
 
 4.1.1 Somente serão consideradas as inscrições finalizadas até às 12h de 04 de abril de 2025.
 
@@ -224,7 +224,7 @@ ser estudante estrangeiro em situação de vulnerabilidade socioeconômica ou re
 
 4.4.1 Serão analisados os chamados abertos pelo servidor responsável até às 10h horas do dia 04 de abril de 2025.
 
-4.4.2 O suporte técnico por parte da DGTI e DAES, em relação ao SiGAE, será fornecido durante o período de inscrição, no horário das 08h do dia 17 de fevereiro às 10h do dia 04 de abril de 2025, somente nos dias úteis e em horário de expediente das 08h às 17h, exclusivamente por chamado da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br).
+4.4.2 O suporte técnico por parte da DGTI e DAES, em relação ao SiGAE, será fornecido durante o período de inscrição, no horário das 08h do dia 24 de fevereiro às 10h do dia 04 de abril de 2025, somente nos dias úteis e em horário de expediente das 08h às 17h, exclusivamente por chamado da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br).
 
  
 
@@ -710,7 +710,8 @@ https://reitoria.ifpr.edu.br/menu-academico/assistencia-estudante/editais/, não
 
 Curitiba, 11 de fevereiro de 2025.
 
-ANEXO I
+
+ ANEXO I
 
 DOCUMENTAÇÃO PARA COMPROVAÇÃO DE ELEGIBILIDADE (REQUISITOS)
 
