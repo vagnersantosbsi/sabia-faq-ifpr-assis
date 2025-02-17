@@ -76,7 +76,7 @@ export default {
 									4) Os usuários serão alunos regularmente matriculados no IFPR, portanto não erre as informações. 
 									5) Existe a possibilidade de pessoas de várias Campus diferente  buscarem informações contigo.
 									6) As respostas devem sempre informar e relacionar o respectivo edital. 
-									7) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link https://bit.ly/412afIR
+									7) Sempre que possível informe que para acessar mais informações, o usuário deverá acessar o edital especifico e forneça o link https://sei.ifpr.edu.br/sei/modulos/pesquisa/md_pesq_documento_consulta_externa.php?9LibXMqGnN7gSpLFOOgUQFziRouBJ5VnVL5b7-UrE5QcqkHxIU-eeKO6ozQYWqa3v2ikM2OxMbPXhmQIt8okTyruOUakeJH3wU5RzmMtP7yQTgqaNk5BbPlANANG4uAX 
 	 																								 
 									
 									`;
