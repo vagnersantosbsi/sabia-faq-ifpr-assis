@@ -132,9 +132,11 @@ export default {
         const sendMessage = async () => {
             if (userInput.value.trim() === '') return;
 
-			var edital6_2025 = `Edital N°8, de 11 de fevereiro de 2025
+			var edital6_2025 = ` 
+   
+   Edital N°8, de 11 de fevereiro de 2025
 
- 
+RETIFICADO
 
 
 O DIRETOR SISTÊMICO DE ASSUNTOS ESTUDANTIS DO INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO PARANÁ, no uso da competência que lhe confere a Portaria nº 543, de 06 de março de 2024, publicada no Diário Oficial da União em 07 de março de 2024, seção 2, página 19, resolve tornar pública a inscrição para fins de concessão de benefício direto ao estudante e dá providências administrativas e financeiras no âmbito do PROGRAMA DE ASSISTÊNCIA COMPLEMENTAR AO ESTUDANTE PACE 2025, visando contribuir com o custeio parcial pelo discente das despesas essenciais à sua permanência e êxito acadêmico.
@@ -709,8 +711,10 @@ https://reitoria.ifpr.edu.br/menu-academico/assistencia-estudante/editais/, não
 
 Curitiba, 11 de fevereiro de 2025.
 
+ 
 
- ANEXO I
+ 
+ANEXO I
 
 DOCUMENTAÇÃO PARA COMPROVAÇÃO DE ELEGIBILIDADE (REQUISITOS)
 
@@ -1531,6 +1535,7 @@ comunidade indígena, quando a FUNAI não declarar
 	
 Obs 2: Se os líderes ou alguns dos líderes signatários da declaração possuir algum vínculo com alguma entidade representativa da comunidade, essa situação deverá ser identificada na declaração, mediante a indicação do nome e aposição do carimbo do CNPJ da entidade a qual representa.
 
+ 
  `;
 
             var edital87 = `Edital N°87, de 20 de setembro de 2024 PROCESSO SELETIVO IFPR 2025 - CURSOS TÉCNICOS INTEGRADOS AO ENSINO MÉDIO
