@@ -217,8 +217,6 @@ ser estudante estrangeiro em situação de vulnerabilidade socioeconômica ou re
 
 4.2.1 O Tutorial contendo o passo a passo para a inscrição e submissão de documentos no SIGAE encontra-se disponível em: https://ifpr.edu.br/menu-academico/assistencia-estudantil/tutoriais-assistencia-estudantil/assistencia-estudantil-tutoriais/
 
-4.2.2 Os discentes com Índice de Vulnerabilidade Socioeconômica válido, por meio do SIGAE, ficam dispensados de apresentar os documentos dos Anexos I e II, uma vez que já possuem suas análises socioeconômicas realizadas e o Tutorial contendo o passo a passo para a inscrição no SiGAE encontra-se disponível no item 7 em: https://ifpr.edu.br/menu-academico/assistencia-estudantil/tutoriais-assistencia-estudantil/assistencia-estudantil-tutoriais/
-
 4.3 Os discentes que não possuem acesso à internet poderão dirigir-se ao laboratório de informática do seu campus, no período especificado no item 4.1, e havendo quaisquer dúvidas deverão procurar a Seção Pedagógica e de Assuntos Estudantis – SEPAE ou setor responsável.
 
 4.4 Em caso de necessidade de suporte técnico referente ao funcionamento do SiGAE, o servidor responsável no campus deverá abrir chamado exclusivamente por meio da Central de Serviços, do Sistema Unificado de Administração Pública - SUAP, disponível em Abrir Chamado para Sistemas - SUAP: Sistema Unificado de Administração Pública (ifpr.edu.br), selecionando tipo de sistema "SIGAE", bem como realizar o acompanhamento e o retorno com a solução ao candidato.
